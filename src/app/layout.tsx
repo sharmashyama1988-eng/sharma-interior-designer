@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     description: 'Bespoke classical furniture designs & royal villa interiors.',
     images: ['/logo.jpg'],
   },
+  verification: {
+    google: 'pE_h0mGnQTI35A2Z6drNRWA-dWCQQ6QhKz7be-Mq78g',
+  },
 };
 
 export default function RootLayout({
