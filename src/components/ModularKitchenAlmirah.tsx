@@ -12,7 +12,7 @@ const KITCHEN_ALMIRAH_WORKS = [
     rate: '₹1,850 / sq. ft.',
     finish: 'PU Gloss & Quartz Countertop',
     hardware: 'Blum Soft-Close Motion (German Technology)',
-    image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop',
+    image: '/kitchen1.jpg',
     features: [
       '100% Water-proof & Termite-proof Marine Ply + Teak Finish',
       'Italian Calacatta Quartz Countertop with Waterfall Edge',
@@ -27,7 +27,7 @@ const KITCHEN_ALMIRAH_WORKS = [
     rate: '₹1,650 / sq. ft.',
     finish: 'Champagne Gold & Dark Walnut Lacquer',
     hardware: 'Hettich Soft-Close Hardware',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop',
+    image: '/kitchen2.jpg',
     features: [
       'Solid Teak Shaker Style Shutter Doors',
       'Stain-resistant Granite / Italian Marble Countertops',
@@ -42,7 +42,7 @@ const KITCHEN_ALMIRAH_WORKS = [
     rate: '₹1,450 / sq. ft.',
     finish: '24K Gold Leaf Gilt & Satin Chestnut',
     hardware: 'Antique Brass Lock Handles & Heavy Concealed Hinges',
-    image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop',
+    image: '/almirah1.jpg',
     features: [
       'Solid Teak Frame with Crown Pediment Carving',
       'Full-Length Beveled Mirror Center Shutters',
@@ -57,7 +57,7 @@ const KITCHEN_ALMIRAH_WORKS = [
     rate: '₹1,750 / sq. ft.',
     finish: 'Tinted Toughened Glass & Gold Anodized Aluminum Profile',
     hardware: 'Top-Hung Heavy Duty Sliding Tracks',
-    image: 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1200&auto=format&fit=crop',
+    image: '/almirah2.jpg',
     features: [
       'Automatic Sensor Warm LED Bar Lighting on Opening',
       'Custom Trouser Racks, Shoe Organizers & Blazer Hangers',
