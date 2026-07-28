@@ -23,6 +23,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Collections', href: '#catalog' },
     { name: 'Kitchen & Almirah', href: '#kitchen-almirah' },
+    { name: 'Mica & Doors', href: '#mica-selector' },
     { name: '3D Customizer', href: '#customizer' },
     { name: 'Services', href: '#services' },
     { name: 'Portfolio', href: '#portfolio' },

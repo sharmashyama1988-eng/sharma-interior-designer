@@ -3,6 +3,7 @@ import HeritageAbout from '@/components/HeritageAbout';
 import ServicesSection from '@/components/ServicesSection';
 import FurnitureCatalog from '@/components/FurnitureCatalog';
 import ModularKitchenAlmirah from '@/components/ModularKitchenAlmirah';
+import MicaDesignSelector from '@/components/MicaDesignSelector';
 import InteractiveCustomizer from '@/components/InteractiveCustomizer';
 import MaterialCraftsmanship from '@/components/MaterialCraftsmanship';
 import CostEstimator from '@/components/CostEstimator';
@@ -23,6 +24,7 @@ export default function Home() {
       <ServicesSection />
       <FurnitureCatalog />
       <ModularKitchenAlmirah />
+      <MicaDesignSelector />
       <InteractiveCustomizer />
       <MaterialCraftsmanship />
       <CostEstimator />
