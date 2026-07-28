@@ -1,3 +1,5 @@
+import { PRICEBASE_CATALOG, formatPriceBaseRupees } from '@/lib/pricebase';
+
 export interface FurnitureItem {
   id: string;
   name: string;
@@ -39,10 +41,10 @@ export const getWhatsAppLink = (message?: string) => {
 
 export const FURNITURE_CATALOG: FurnitureItem[] = [
   {
-    id: "f1",
-    name: "The Royal Teakwood Maharaja Sofa Set (3+2+1 + Table)",
+    id: PRICEBASE_CATALOG.maharaja_sofa.id,
+    name: PRICEBASE_CATALOG.maharaja_sofa.name,
     category: "living",
-    price: 265000,
+    price: PRICEBASE_CATALOG.maharaja_sofa.basePrice,
     originalPrice: 295000,
     rating: 4.9,
     woodType: "Grade-A Seasoned Burma Teak",
@@ -54,10 +56,10 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
   {
-    id: "f2",
-    name: "Emperor Hand-Carved Dining Suite (8-Seater + Marble Top)",
+    id: PRICEBASE_CATALOG.emperor_dining.id,
+    name: PRICEBASE_CATALOG.emperor_dining.name,
     category: "dining",
-    price: 325000,
+    price: PRICEBASE_CATALOG.emperor_dining.basePrice,
     originalPrice: 360000,
     rating: 5.0,
     woodType: "Solid Burma Teakwood & Italian Carrara Marble",
@@ -69,10 +71,10 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
   {
-    id: "f3",
-    name: "Victoria Four-Poster Master Bed Suite (King Bed + 2 Nightstands)",
+    id: PRICEBASE_CATALOG.victoria_bed.id,
+    name: PRICEBASE_CATALOG.victoria_bed.name,
     category: "bedroom",
-    price: 245000,
+    price: PRICEBASE_CATALOG.victoria_bed.basePrice,
     originalPrice: 280000,
     rating: 4.9,
     woodType: "Solid Rosewood (Sheesham) & Italian Leather",
@@ -84,10 +86,10 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
   {
-    id: "f4",
-    name: "Executive Grand Consul Writing Desk & Leather Chair",
+    id: PRICEBASE_CATALOG.executive_desk.id,
+    name: PRICEBASE_CATALOG.executive_desk.name,
     category: "study",
-    price: 165000,
+    price: PRICEBASE_CATALOG.executive_desk.basePrice,
     originalPrice: 185000,
     rating: 4.8,
     woodType: "Burma Teak with Italian Gold Marble Top",
@@ -99,10 +101,10 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: false
   },
   {
-    id: "f5",
-    name: "Baroque Hand-Sculpted Hallway Console & Crown Arch Mirror",
+    id: PRICEBASE_CATALOG.baroque_console.id,
+    name: PRICEBASE_CATALOG.baroque_console.name,
     category: "accents",
-    price: 115000,
+    price: PRICEBASE_CATALOG.baroque_console.basePrice,
     originalPrice: 130000,
     rating: 4.9,
     woodType: "Burma Teakwood & Beveled Belgian Glass",
@@ -114,10 +116,10 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
   {
-    id: "f6",
-    name: "Heritage Chesterfield Tufted Armchair (Italian Leather)",
+    id: PRICEBASE_CATALOG.chesterfield_armchair.id,
+    name: PRICEBASE_CATALOG.chesterfield_armchair.name,
     category: "living",
-    price: 88000,
+    price: PRICEBASE_CATALOG.chesterfield_armchair.basePrice,
     originalPrice: 98000,
     rating: 4.9,
     woodType: "Solid Burma Teak Frame & Italian Full-Grain Leather",
@@ -125,36 +127,6 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     dimensions: "44\" W x 38\" D x 34\" H",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
     description: "Deep button-tufted classic Chesterfield lounge chair built on a kiln-dried hardwood structure with hand-hammered brass stud detailing.",
-    isCustomizable: true,
-    featured: false
-  },
-  {
-    id: "f7",
-    name: "Renaissance Carved Glass Crockery Showcase Cabinet",
-    category: "dining",
-    price: 215000,
-    originalPrice: 240000,
-    rating: 5.0,
-    woodType: "Teakwood with Tempered Beveled Glass",
-    finish: "Classic Warm Amber Gloss & Gold Trim",
-    dimensions: "78\" W x 22\" D x 90\" H",
-    image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1200&auto=format&fit=crop",
-    description: "Display showcase featuring warm interior LED spotlighting, velvet-lined silverware drawers, and hand-carved pediment crown.",
-    isCustomizable: true,
-    featured: false
-  },
-  {
-    id: "f8",
-    name: "Palace 6-Door Wardrobe & Dressing Suite",
-    category: "bedroom",
-    price: 345000,
-    originalPrice: 385000,
-    rating: 4.9,
-    woodType: "Burma Teak & Antique Brass Hardware",
-    finish: "Satin Dark Chestnut & Gold Leaf Pediments",
-    dimensions: "120\" W x 26\" D x 96\" H",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
-    description: "Grand classical 6-door wardrobe with full-length vanity mirrors, secret brass-locked jewelry safes, and velvet shoe racks.",
     isCustomizable: true,
     featured: false
   }
@@ -184,30 +156,6 @@ export const PROJECTS_GALLERY: ProjectItem[] = [
     imageAfter: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
     description: "Neo-classical open plan design with velvet Chesterfield seating, brass accent wall trims, and custom teakwood bar lounge.",
     highlights: ["Custom Wine Bar Lounge", "Tufted Velvet Accent Walls", "Smart Ambient Warm Lighting"]
-  },
-  {
-    id: "p3",
-    title: "Executive Corporate Boardroom & Chairman Chambers",
-    category: "commercial",
-    location: "Boring Road",
-    area: "4,200 sq. ft.",
-    completionYear: "2025",
-    imageBefore: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
-    imageAfter: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop",
-    description: "High-status corporate office interior featuring 20-seater teak conference table, leather recliner chairs, and acoustic timber panelling.",
-    highlights: ["20-Seater Conference Suite", "Acoustic Wood Panelling", "Integrated AV Systems"]
-  },
-  {
-    id: "p4",
-    title: "Heritage Mansion Master Bedroom & Dressing Suite",
-    category: "restoration",
-    location: "Baily Road",
-    area: "2,500 sq. ft.",
-    completionYear: "2024",
-    imageBefore: "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop",
-    imageAfter: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=800&auto=format&fit=crop",
-    description: "Restoration of a family estate master suite, combining classic brass scrollwork, four-poster bed, and custom walk-in closet.",
-    highlights: ["Four-Poster Bed Restoration", "Walk-in Dressing Suite", "Vintage Brass Inlays"]
   }
 ];
 
@@ -225,13 +173,6 @@ export const TESTIMONIALS = [
     comment: "The custom furniture quality is unmatched. I inquired via WhatsApp at 9801197102, got a 3D preview and cost estimate within hours, and the installation was flawless.",
     rating: 5,
     project: "Penthouse Master Bedroom"
-  },
-  {
-    name: "Vikramaditya Singh",
-    role: "Managing Director, Singh Group",
-    comment: "We commissioned Sharma Interior Designer for our corporate headquarters boardrooms. The classical mahogany finish and craftsmanship are world-class. Prompt response and super easy to work with.",
-    rating: 5,
-    project: "Corporate Office & Boardroom"
   }
 ];
 
@@ -243,17 +184,5 @@ export const FAQS = [
   {
     question: "Do you offer complete home interior design packages?",
     answer: "Yes! With 28+ years of excellence, we specialize in turnkey interior solutions — including space planning, 3D architectural renders, custom teakwood furniture manufacturing, false ceiling, lighting, wall panelling, and white-glove installation."
-  },
-  {
-    question: "What wood types do you use for handcrafted furniture?",
-    answer: "We use 100% seasoned Grade-A Burma Teakwood, Sheesham (Rosewood), Mahogany, and Steam-cured Walnut. All our timber undergoes anti-termite treatment and kiln-drying for lifelong structural durability."
-  },
-  {
-    question: "Can I customize the dimensions, polish finish, and upholstery fabric?",
-    answer: "Absolutely! Every piece of furniture can be customized down to the millimeter, choice of wood polish (Gold leaf, Dark Walnut, Antique Amber, Natural Gloss), and fabric (Velvet, Italian Leather, Jacquard)."
-  },
-  {
-    question: "What is your warranty policy?",
-    answer: "We offer a 10-Year Structural Warranty on all solid hardwood furniture and a 5-Year On-Site Service Warranty for complete interior projects."
   }
 ];
