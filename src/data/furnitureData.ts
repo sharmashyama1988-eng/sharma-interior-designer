@@ -72,7 +72,7 @@ export const CATALOG_CATEGORIES = [
 ];
 
 export const FURNITURE_CATALOG: FurnitureItem[] = [
-  // 1. Modular Kitchens (Classical & Modern)
+  // 1. Modular Kitchens
   {
     id: "MK-ISL-01",
     name: "Royal Imperial Burma Teak Island Modular Kitchen",
@@ -134,7 +134,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
 
-  // 2. Almirah & Wardrobe Systems (Heritage & Modern)
+  // 2. Almirah & Wardrobe Systems
   {
     id: "AW-6DR-01",
     name: "Palace 6-Door Carved Burma Teak Heritage Almirah",
@@ -254,7 +254,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Grade-A Burma Teakwood",
     finish: "Dark Espresso Polyurethane Lacquer & Cognac Leather Inlay",
     dimensions: "90\" W x 42\" D x 30\" H (Desk + Return Credenza)",
-    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop",
     description: "Commanding 7.5ft executive desk with carved modesty panel, wire management raceways, locking file drawers, and Italian full-grain cognac leather top.",
     isCustomizable: true,
     featured: false
@@ -269,7 +269,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Burma Teak & Bottochino Marble",
     finish: "Hand-polished Walnut & Cast Brass Pedestals",
     dimensions: "168\" L x 54\" W x 30\" H (14ft Boat Shape)",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
     description: "Architectural 14-foot conference table with Italian Bottochino marble centerpiece slab, motorized AV access boxes, HDMI/LAN sockets, and heavy twin brass pedestals.",
     isCustomizable: true,
     featured: true
@@ -286,10 +286,25 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Grade-A Selected Burma Teakwood",
     finish: "Nero Portoro Black & Gold Marble Slab with 24K Gold Leaf",
     dimensions: "96\" W x 44\" D x 31\" H Desk + 8ft Credenza",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop",
     description: "Exclusive C-Suite presidential desk featuring hand-carved baroque coat-of-arms crest, Italian Nero Portoro Marble top inset, and biometric safe drawer.",
     isCustomizable: true,
     featured: true
+  },
+  {
+    id: "MO-REC-02",
+    name: "Grand Regent Italian Tufted Leather Executive Recliner",
+    category: "master_office",
+    price: 125000,
+    originalPrice: 145000,
+    rating: 4.9,
+    woodType: "Burma Teak Frame & Italian Full-Grain Leather",
+    finish: "Vintage Oxblood Patina & German Motorized Recline",
+    dimensions: "42\" W x 38\" D x 46\" H",
+    image: "https://images.unsplash.com/photo-1580481072645-022f9a6d8310?q=80&w=1200&auto=format&fit=crop",
+    description: "Deep button-tufted Chesterfield executive recliner with German electric recline, massage nodes, lumbar heating, and carved Burma teak armrests.",
+    isCustomizable: true,
+    featured: false
   },
 
   // 6. Wall Panelling
@@ -303,8 +318,23 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Burma Teak Mouldings & Teak Veneer",
     finish: "Satin Touch Antique Mahogany Polyurethane Stain",
     dimensions: "Custom Wall Area (Rate: ₹1,350 / sq. ft.)",
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1200&auto=format&fit=crop",
     description: "French Victorian raised panel wainscoting with hand-turned solid teak dado rail, acoustic timber backing, and scratch-resistant clear lacquer.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "WP-BRS-02",
+    name: "Heritage Teak Panel Suite with Geometric Brass Strip Inlays",
+    category: "wall_panelling",
+    price: 225000,
+    originalPrice: 255000,
+    rating: 5.0,
+    woodType: "Grade-A Burma Teak & Smoked Walnut",
+    finish: "10mm Solid Brass T-Profile Inlays & Warm LED Cove",
+    dimensions: "Custom Wall Area (Rate: ₹1,650 / sq. ft.)",
+    image: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=1200&auto=format&fit=crop",
+    description: "Modern-classical fluted teak slats with mirror-finish brass inlay bands, concealed wall access doors, and back-illuminated LED cove lighting.",
     isCustomizable: true,
     featured: true
   },
@@ -320,10 +350,25 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Italian Statuario Marble & Burma Teak Louvers",
     finish: "Polished Marble Slab & Champagne Gold Inlays",
     dimensions: "108\" W x 84\" H (Fits up to 85\" TV)",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=1200&auto=format&fit=crop",
     description: "Book-matched Italian Statuario marble backplate with backlit LED halo glow, handcrafted vertical teak louver wings, and floating media credenza.",
     isCustomizable: true,
     featured: true
+  },
+  {
+    id: "TV-LVR-02",
+    name: "Royal Architectural Teak Slat & Backlit Quartz TV Unit",
+    category: "tv_panel",
+    price: 135000,
+    originalPrice: 155000,
+    rating: 4.8,
+    woodType: "Burma Teak Slats & Patagonia Quartzite",
+    finish: "Natural Wood Touch PU & Dimmable Smart LED",
+    dimensions: "120\" W x 96\" H Full Height Media Wall",
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop",
+    description: "Full-height teak slat panelling with translucent Patagonia quartzite centerpiece, soundbar acoustic shelf, and hidden touch-release side storage.",
+    isCustomizable: true,
+    featured: false
   },
 
   // 8. Commercial Showroom Interiors
@@ -337,8 +382,23 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Burma Teak Platforms & Brass PVD Framework",
     finish: "Ultra-Clear Glass Shelves & Italian Marble Plinth",
     dimensions: "Custom Showroom Layout (Rate: ₹1,950 / sq. ft.)",
-    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop",
     description: "Bespoke retail display wall with gold brass suspension columns, micro LED spot highlights (CRI 95+), teak storage cabinetry, and marble base plinth.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "CS-CNT-02",
+    name: "Empire Monolithic Curved Marble & Teak Reception Counter Top",
+    category: "showroom",
+    price: 290000,
+    originalPrice: 330000,
+    rating: 4.9,
+    woodType: "Italian Calacatta Marble & Teak CNC Slats",
+    finish: "Brushed Antique Brass Base & Undercut LED Glow",
+    dimensions: "120\" W x 36\" D x 42\" H Reception Counter",
+    image: "https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=1200&auto=format&fit=crop",
+    description: "Sculptural curved reception counter featuring seamless Italian marble front, undercut LED floating glow, dual workstation interior, and cash drawers.",
     isCustomizable: true,
     featured: true
   },
@@ -354,7 +414,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Burma Teak Wainscoting & Leather Panelling",
     finish: "Teak Coffered Ceiling & Smart Automated Lighting",
     dimensions: "Full 500 Sq. Ft. Chamber (Rate: ₹2,250 / sq. ft.)",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop",
     description: "Turnkey C-Suite executive office suite with teak coffered ceiling, acoustic wall lining, presidential desk, Chesterfield leather lounge, and private bar.",
     isCustomizable: true,
     featured: true
@@ -371,7 +431,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Burma Teak Frame & Toughened Belgian Glass",
     finish: "Crimson Velvet Trays & RFID Electronic Lock",
     dimensions: "72\" W x 22\" D x 84\" H Glass Display Unit",
-    image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=1200&auto=format&fit=crop",
     description: "High-security jewelry display almirah with anti-shatter glass, vertical micro-LED spot channels, velvet ring/watch trays, and reinforced overnight vault storage.",
     isCustomizable: true,
     featured: true
@@ -425,7 +485,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
   }
 ];
 
-export const PROJECTS_GALLERY = [
+export const PROJECTS_GALLERY: ProjectItem[] = [
   {
     id: "p1",
     title: "Royal Heritage Villa Interior & Bespoke Teak Woodwork",
@@ -434,7 +494,7 @@ export const PROJECTS_GALLERY = [
     area: "6,500 sq. ft.",
     completionYear: "2025",
     imageBefore: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
-    imageAfter: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
+    imageAfter: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
     description: "Complete turnkey interior overhaul featuring hand-carved teak coffered ceilings, wall panelling, custom royal dining suite, and chandelier lighting.",
     highlights: ["Teak Coffered Ceiling", "Italian Marble Flooring Integration", "Full Classical Villa Styling"]
   },
