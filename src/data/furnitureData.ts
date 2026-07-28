@@ -31,6 +31,19 @@ export interface FurnitureItem {
   featured?: boolean;
 }
 
+export interface ProjectItem {
+  id: string;
+  title: string;
+  category: 'residential' | 'commercial' | 'villas' | 'restoration';
+  location: string;
+  area: string;
+  completionYear: string;
+  imageBefore?: string;
+  imageAfter: string;
+  description: string;
+  highlights: string[];
+}
+
 export const PHONE_NUMBER = "9801197102";
 export const WHATSAPP_NUMBER = "919801197102";
 
