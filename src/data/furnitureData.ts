@@ -11,6 +11,7 @@ export interface FurnitureItem {
     | 'accents' 
     | 'kitchen' 
     | 'almirah' 
+    | 'doors'
     | 'office' 
     | 'master_office' 
     | 'wall_panelling' 
@@ -42,8 +43,9 @@ export const getWhatsAppLink = (message?: string) => {
 
 export const CATALOG_CATEGORIES = [
   { id: 'all', label: 'All Collections' },
-  { id: 'kitchen', label: 'Modular Kitchen' },
+  { id: 'kitchen', label: 'Modular Kitchens' },
   { id: 'almirah', label: 'Almirah & Wardrobes' },
+  { id: 'doors', label: 'Teak & Royal Doors' },
   { id: 'office', label: 'Office Furniture' },
   { id: 'master_office', label: 'Master Office & Chairman' },
   { id: 'wall_panelling', label: 'Wall Panelling' },
@@ -57,7 +59,7 @@ export const CATALOG_CATEGORIES = [
 ];
 
 export const FURNITURE_CATALOG: FurnitureItem[] = [
-  // 1. Modular Kitchen
+  // 1. Modular Kitchens (Classical & Modern)
   {
     id: "MK-ISL-01",
     name: "Royal Imperial Burma Teak Island Modular Kitchen",
@@ -88,8 +90,38 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: false
   },
+  {
+    id: "MK-ACR-03",
+    name: "Handleless Super-Matt Acrylic Modular Kitchen",
+    category: "kitchen",
+    price: 310000,
+    originalPrice: 345000,
+    rating: 5.0,
+    woodType: "HDHMR Marine Board & Anti-fingerprint Acrylic",
+    finish: "Super-Matt Cashmere Grey & Anodized GOLA Channel",
+    dimensions: "Custom Layout (Rate: ₹1,750 / sq. ft.)",
+    image: "/kitchen3.jpg",
+    description: "Ultra-modern handleless modular kitchen featuring anti-fingerprint nanotech super-matt acrylic shutters, seamless GOLA profile handles in anodized black, and quartz countertop.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "MK-SMR-04",
+    name: "Smart Sensor Touch Island Kitchen with Cantilevered Bar",
+    category: "kitchen",
+    price: 395000,
+    originalPrice: 435000,
+    rating: 5.0,
+    woodType: "HDHMR Marine Board & Translucent Patagonia Quartzite",
+    finish: "Blum Servo-Drive Motorized Touch & Teak Bar",
+    dimensions: "Custom Layout (Rate: ₹2,100 / sq. ft.)",
+    image: "/kitchen4.jpg",
+    description: "State-of-the-art smart kitchen featuring Blum Servo-Drive motorized automatic touch-to-open cabinets, backlit Patagonia quartzite island with a cantilevered solid Burma teak bar.",
+    isCustomizable: true,
+    featured: true
+  },
 
-  // 2. Almirah & Wardrobe Systems
+  // 2. Almirah & Wardrobe Systems (Heritage & Modern)
   {
     id: "AW-6DR-01",
     name: "Palace 6-Door Carved Burma Teak Heritage Almirah",
@@ -120,8 +152,85 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
+  {
+    id: "AW-FLT-03",
+    name: "Architectural Fluted Acrylic & Matte Lacquer Sliding Almirah",
+    category: "almirah",
+    price: 245000,
+    originalPrice: 275000,
+    rating: 4.9,
+    woodType: "HDHMR Marine Board & Fluted Matte Acrylic",
+    finish: "Fluted White Acrylic & Champagne Gold Profile",
+    dimensions: "108\" W x 24\" D x 96\" H",
+    image: "/almirah3.jpg",
+    description: "Contemporary sliding door wardrobe featuring 3D fluted vertical textured acrylic door panels, slim champagne gold aluminum profile borders, and soft-close top-hung sliding mechanism.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "AW-RGM-04",
+    name: "Palazzo Rose Gold Mirror & Tufted Leather 4-Door Almirah",
+    category: "almirah",
+    price: 285000,
+    originalPrice: 320000,
+    rating: 5.0,
+    woodType: "Teak Framework & Toughened Rose Gold Mirror Glass",
+    finish: "Rose Gold Tinted Mirror & Nude Leatherette Side Panels",
+    dimensions: "96\" W x 24\" D x 96\" H",
+    image: "/almirah4.jpg",
+    description: "Exquisite 4-door wardrobe featuring bevelled rose gold reflective mirror glass shutters, nude leatherette side panelling, rose gold metal handles, and velvet-lined drawers.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "AW-PTO-05",
+    name: "Zenith Minimal Handleless Push-to-Open Master Wardrobe",
+    category: "almirah",
+    price: 215000,
+    originalPrice: 240000,
+    rating: 4.8,
+    woodType: "HDHMR Marine Board & Teak Veneer Inserts",
+    finish: "Super-Matt Ivory Polyurethane & Concealed Push Rebounds",
+    dimensions: "120\" W x 24\" D x 96\" H",
+    image: "/almirah5.jpg",
+    description: "Seamless minimal floor-to-ceiling handleless wardrobe featuring super-matt ivory PU finish, push-to-open spring hinges, hidden shadow-gap joints, and integrated vanity desk module.",
+    isCustomizable: true,
+    featured: false
+  },
 
-  // 3. Office Furniture
+  // 3. Teak & Royal Doors
+  {
+    id: "DR-TRK-01",
+    name: "Imperial Hand-Carved Burma Teak Royal Entrance Double Door",
+    category: "doors",
+    price: 185000,
+    originalPrice: 210000,
+    rating: 5.0,
+    woodType: "100% Grade-A Seasoned Solid Burma Teakwood",
+    finish: "Satin Amber Walnut & 24K Gold Leaf Details",
+    dimensions: "8ft H x 5ft W (Double Door set with Frame)",
+    image: "/door1.jpg",
+    description: "Grand entrance double door crafted from 3-inch thick solid Burma teakwood, featuring deep relief hand-carved royal motif panels, brass stud embellishments, and solid brass antique handles.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "DR-VNR-02",
+    name: "Contemporary Smoked Walnut Flush Veneer Door with Brass Inlays",
+    category: "doors",
+    price: 65000,
+    originalPrice: 75000,
+    rating: 4.9,
+    woodType: "Solid Core Marine Flush Door with Smoked Walnut Veneer",
+    finish: "Natural Matte PU & Vertical Brass T-Strips",
+    dimensions: "8ft H x 3.5ft W (Single Door with Frame)",
+    image: "/door2.jpg",
+    description: "Sleek architectural flush door clad in premium natural smoked walnut timber veneer, inlaid with vertical brushed champagne brass metal profiles and magnetic mortise lock.",
+    isCustomizable: true,
+    featured: false
+  },
+
+  // 4. Office Furniture
   {
     id: "OF-DSK-01",
     name: "Sovereign Burma Teak Executive Desk & Credenza Set",
@@ -153,7 +262,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
 
-  // 4. Master Office & Chairman Chambers
+  // 5. Master Office & Chairman Chambers
   {
     id: "MO-CHR-01",
     name: "Imperial Chairman Royal Teak Pedestal Desk & Carved Crest",
@@ -164,28 +273,13 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Grade-A Selected Burma Teakwood",
     finish: "Nero Portoro Black & Gold Marble Slab with 24K Gold Leaf",
     dimensions: "96\" W x 44\" D x 31\" H Desk + 8ft Credenza",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop",
     description: "Exclusive C-Suite presidential desk featuring hand-carved baroque coat-of-arms crest, Italian Nero Portoro Marble top inset, and biometric safe drawer.",
     isCustomizable: true,
     featured: true
   },
-  {
-    id: "MO-REC-02",
-    name: "Grand Regent Italian Tufted Leather Executive Recliner",
-    category: "master_office",
-    price: 125000,
-    originalPrice: 145000,
-    rating: 4.9,
-    woodType: "Burma Teak Frame & Italian Full-Grain Leather",
-    finish: "Vintage Oxblood Patina & German Motorized Recline",
-    dimensions: "42\" W x 38\" D x 46\" H",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
-    description: "Deep button-tufted Chesterfield executive recliner with German electric recline, massage nodes, lumbar heating, and carved Burma teak armrests.",
-    isCustomizable: true,
-    featured: false
-  },
 
-  // 5. Wall Panelling
+  // 6. Wall Panelling
   {
     id: "WP-WNS-01",
     name: "Versailles Teakwood Wainscoting & Fluted Dado Rail Panelling",
@@ -201,23 +295,8 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
-  {
-    id: "WP-BRS-02",
-    name: "Heritage Teak Panel Suite with Geometric Brass Strip Inlays",
-    category: "wall_panelling",
-    price: 225000,
-    originalPrice: 255000,
-    rating: 5.0,
-    woodType: "Grade-A Burma Teak & Smoked Walnut",
-    finish: "10mm Solid Brass T-Profile Inlays & Warm LED Cove",
-    dimensions: "Custom Wall Area (Rate: ₹1,650 / sq. ft.)",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
-    description: "Modern-classical fluted teak slats with mirror-finish brass inlay bands, concealed wall access doors, and back-illuminated LED cove lighting.",
-    isCustomizable: true,
-    featured: true
-  },
 
-  // 6. Wall Mount LED TV Panel Units
+  // 7. Wall Mount LED TV Panel Units
   {
     id: "TV-MRB-01",
     name: "Celestial Floating Italian Statuario Marble & Teak TV Console",
@@ -233,23 +312,8 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
-  {
-    id: "TV-LVR-02",
-    name: "Royal Architectural Teak Slat & Backlit Quartz TV Unit",
-    category: "tv_panel",
-    price: 135000,
-    originalPrice: 155000,
-    rating: 4.8,
-    woodType: "Burma Teak Slats & Patagonia Quartzite",
-    finish: "Natural Wood Touch PU & Dimmable Smart LED",
-    dimensions: "120\" W x 96\" H Full Height Media Wall",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop",
-    description: "Full-height teak slat panelling with translucent Patagonia quartzite centerpiece, soundbar acoustic shelf, and hidden touch-release side storage.",
-    isCustomizable: true,
-    featured: false
-  },
 
-  // 7. Commercial Showroom Interiors
+  // 8. Commercial Showroom Interiors
   {
     id: "CS-RCK-01",
     name: "Pavilion Luxury Retail Display Rack System & Brass Frame",
@@ -265,23 +329,8 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
-  {
-    id: "CS-CNT-02",
-    name: "Empire Monolithic Curved Marble & Teak Reception Counter Top",
-    category: "showroom",
-    price: 290000,
-    originalPrice: 330000,
-    rating: 4.9,
-    woodType: "Italian Calacatta Marble & Teak CNC Slats",
-    finish: "Brushed Antique Brass Base & Undercut LED Glow",
-    dimensions: "120\" W x 36\" D x 42\" H Reception Counter",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=1200&auto=format&fit=crop",
-    description: "Sculptural curved reception counter featuring seamless Italian marble front, undercut LED floating glow, dual workstation interior, and cash drawers.",
-    isCustomizable: true,
-    featured: true
-  },
 
-  // 8. Luxury Executive Office Suites
+  // 9. Luxury Executive Office Suites
   {
     id: "LO-SUT-01",
     name: "Presidential Full Turnkey Executive Chamber Suite",
@@ -298,7 +347,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
 
-  // 9. Shop Furniture & Retail Display Almirahs
+  // 10. Shop Furniture & Retail Display Almirahs
   {
     id: "SF-SHW-01",
     name: "Heritage Jeweller Glass Showcase Display Almirah",
@@ -372,7 +421,7 @@ export const PROJECTS_GALLERY = [
     area: "6,500 sq. ft.",
     completionYear: "2025",
     imageBefore: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop",
-    imageAfter: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop",
+    imageAfter: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
     description: "Complete turnkey interior overhaul featuring hand-carved teak coffered ceilings, wall panelling, custom royal dining suite, and chandelier lighting.",
     highlights: ["Teak Coffered Ceiling", "Italian Marble Flooring Integration", "Full Classical Villa Styling"]
   },
@@ -384,7 +433,7 @@ export const PROJECTS_GALLERY = [
     area: "3,800 sq. ft.",
     completionYear: "2024",
     imageBefore: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop",
-    imageAfter: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop",
+    imageAfter: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop",
     description: "Neo-classical open plan design with velvet Chesterfield seating, brass accent wall trims, and custom teakwood bar lounge.",
     highlights: ["Custom Wine Bar Lounge", "Tufted Velvet Accent Walls", "Smart Ambient Warm Lighting"]
   }
