@@ -10,9 +10,9 @@ const ROOM_PRESETS = [
     name: 'Royal Heritage Living Room',
     image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop',
     hotspots: [
-      { id: 'h1', title: 'Teak Maharaja Sofa', price: '₹1,45,000', x: '40%', y: '65%' },
-      { id: 'h2', title: 'Carved Ceiling Medallion', price: 'Included in Villa Pkg', x: '50%', y: '20%' },
-      { id: 'h3', title: 'Italian Marble Coffee Table', price: '₹48,000', x: '55%', y: '75%' },
+      { id: 'h1', title: 'Teak Maharaja Sofa (3+2+1)', price: '₹2,65,000', x: '40%', y: '65%' },
+      { id: 'h2', title: 'Carved Teak Ceiling Medallion', price: 'Included in Villa Pkg', x: '50%', y: '20%' },
+      { id: 'h3', title: 'Italian Marble Coffee Table', price: '₹78,000', x: '55%', y: '75%' },
     ]
   },
   {
@@ -20,9 +20,9 @@ const ROOM_PRESETS = [
     name: 'Emperor Grand Dining Hall',
     image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1200&auto=format&fit=crop',
     hotspots: [
-      { id: 'h4', title: '8-Seater Carved Burma Teak Table', price: '₹1,85,000', x: '45%', y: '60%' },
+      { id: 'h4', title: '8-Seater Carved Burma Teak Table', price: '₹3,25,000', x: '45%', y: '60%' },
       { id: 'h5', title: 'Gold Leaf Chandelier Ring', price: 'Custom Order', x: '50%', y: '25%' },
-      { id: 'h6', title: 'Renaissance Crockery Cabinet', price: '₹1,35,000', x: '80%', y: '50%' },
+      { id: 'h6', title: 'Renaissance Crockery Cabinet', price: '₹2,15,000', x: '80%', y: '50%' },
     ]
   },
   {
@@ -30,8 +30,8 @@ const ROOM_PRESETS = [
     name: 'Palace Master Bedroom Suite',
     image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop',
     hotspots: [
-      { id: 'h7', title: 'Victoria 4-Poster Rosewood Bed', price: '₹1,65,000', x: '48%', y: '55%' },
-      { id: 'h8', title: 'Hand-Carved Wall Panelling', price: '₹650 / sq. ft.', x: '25%', y: '40%' },
+      { id: 'h7', title: 'Victoria 4-Poster Rosewood Bed', price: '₹2,45,000', x: '48%', y: '55%' },
+      { id: 'h8', title: 'Hand-Carved Wall Panelling', price: '₹1,350 / sq. ft.', x: '25%', y: '40%' },
     ]
   }
 ];

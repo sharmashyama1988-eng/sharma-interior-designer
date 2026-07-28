@@ -5,10 +5,10 @@ import { Calculator, MessageSquare, Phone, Sparkles, CheckCircle2 } from 'lucide
 import { getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
 const ROOM_TYPES = [
-  { id: 'living', name: 'Royal Living Room Suite', basePerSqFt: 450, desc: 'Includes Teak sofa set, coffee table, TV console & panelling' },
-  { id: 'dining', name: 'Emperor Dining & Bar Suite', basePerSqFt: 550, desc: 'Includes 8-seater carved dining table, crockery unit & ceiling' },
-  { id: 'bedroom', name: 'Master Bed & Dressing Suite', basePerSqFt: 500, desc: 'Includes 4-poster bed, nightstands, wardrobe & tufted wall' },
-  { id: 'full_villa', name: 'Turnkey Luxury Villa Interior', basePerSqFt: 850, desc: 'Complete 3D design, hardwood furniture, flooring, ceiling & lighting' },
+  { id: 'living', name: 'Royal Living Room Suite', basePerSqFt: 1250, desc: 'Includes Teak sofa set, coffee table, TV console & wall panelling' },
+  { id: 'dining', name: 'Emperor Dining & Bar Suite', basePerSqFt: 1450, desc: 'Includes 8-seater carved dining table, crockery unit & ceiling' },
+  { id: 'bedroom', name: 'Master Bed & Dressing Suite', basePerSqFt: 1350, desc: 'Includes 4-poster bed, nightstands, wardrobe & tufted wall' },
+  { id: 'full_villa', name: 'Turnkey Royal Villa Interior', basePerSqFt: 2450, desc: 'Complete 3D design, Burma teakwood furniture, flooring, ceiling & lighting' },
 ];
 
 const MATERIAL_TIERS = [

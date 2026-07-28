@@ -5,10 +5,10 @@ import { Sliders, Sparkles, MessageSquare, Phone, Check, RefreshCw } from 'lucid
 import { getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
 const FURNITURE_TYPES = [
-  { id: 'sofa', name: 'Royal Maharaja Sofa', basePrice: 145000, img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop' },
-  { id: 'dining', name: 'Emperor Carved Dining Table', basePrice: 185000, img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1000&auto=format&fit=crop' },
-  { id: 'bed', name: 'Victoria 4-Poster Master Bed', basePrice: 165000, img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop' },
-  { id: 'desk', name: 'Executive Grand Consul Desk', basePrice: 98000, img: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=1000&auto=format&fit=crop' },
+  { id: 'sofa', name: 'Royal Maharaja Sofa (3+2+1)', basePrice: 265000, img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop' },
+  { id: 'dining', name: 'Emperor Carved Dining Table (8-Seater)', basePrice: 325000, img: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1000&auto=format&fit=crop' },
+  { id: 'bed', name: 'Victoria 4-Poster Master Bed', basePrice: 245000, img: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop' },
+  { id: 'desk', name: 'Executive Grand Consul Desk', basePrice: 165000, img: 'https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=1000&auto=format&fit=crop' },
 ];
 
 const WOOD_FINISHES = [
