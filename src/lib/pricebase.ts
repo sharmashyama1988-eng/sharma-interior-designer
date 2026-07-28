@@ -1,131 +1,121 @@
 /**
  * @module PriceBase
- * @description Single source of truth for luxury furniture & architectural interior design pricing algorithms,
+ * @description Single source of truth for 9-Category Luxury Pricing Algorithms,
  * market benchmarks, material multipliers, and WhatsApp quote generation for Sharma Interior Designer.
  */
 
 export interface PriceBaseItem {
   id: string;
   name: string;
-  category: 'living' | 'dining' | 'bedroom' | 'study' | 'accents';
+  category: 
+    | 'living' 
+    | 'dining' 
+    | 'bedroom' 
+    | 'study' 
+    | 'accents' 
+    | 'kitchen' 
+    | 'almirah' 
+    | 'office' 
+    | 'master_office' 
+    | 'wall_panelling' 
+    | 'tv_panel' 
+    | 'showroom' 
+    | 'luxury_office' 
+    | 'shop_almirah';
   basePrice: number;
-  woodGrade: 'Burma Teak' | 'Rosewood (Sheesham)' | 'Steam Walnut' | 'Teak & Marble';
+  woodGrade: 'Burma Teak' | 'Rosewood (Sheesham)' | 'Steam Walnut' | 'Teak & Marble' | 'Marine Ply & Glass';
   defaultFinish: string;
+  ratePerSqFt?: number;
 }
 
-export interface MaterialMultiplier {
-  id: string;
-  label: string;
-  multiplier: number;
-  description: string;
-}
-
-// Core Luxury Furniture Base Price Registry (2026 Benchmarks)
-export const PRICEBASE_CATALOG: Record<string, PriceBaseItem> = {
-  maharaja_sofa: {
-    id: 'f1',
-    name: 'Royal Teakwood Maharaja Sofa Set (3+2+1)',
-    category: 'living',
-    basePrice: 265000,
-    woodGrade: 'Burma Teak',
-    defaultFinish: '24K Gold Leaf Gilt & Dark Walnut'
+// 9-Category Master Catalog Price Registry
+export const PRICEBASE_EXTENDED_CATALOG: Record<string, PriceBaseItem> = {
+  // 1. Modular Kitchen
+  kitchen_island: {
+    id: 'k1',
+    name: 'Royal Burma Teak Island Modular Kitchen',
+    category: 'kitchen',
+    basePrice: 285000,
+    woodGrade: 'Marine Ply & Glass',
+    defaultFinish: 'PU Gloss & Italian Quartz Countertop',
+    ratePerSqFt: 1850
   },
-  emperor_dining: {
-    id: 'f2',
-    name: 'Emperor Carved Dining Suite (8-Seater + Italian Marble)',
-    category: 'dining',
-    basePrice: 325000,
-    woodGrade: 'Teak & Marble',
-    defaultFinish: 'Antique Amber Polish & Champagne Gold'
-  },
-  victoria_bed: {
-    id: 'f3',
-    name: 'Victoria Four-Poster Master Bed Suite',
-    category: 'bedroom',
+  // 2. Almirah / Wardrobe Systems
+  almirah_6door: {
+    id: 'a1',
+    name: 'Palace 6-Door Carved Teakwood Almirah & Wardrobe',
+    category: 'almirah',
     basePrice: 245000,
-    woodGrade: 'Rosewood (Sheesham)',
-    defaultFinish: 'Deep Royal Mahogany & Italian Leather'
+    woodGrade: 'Burma Teak',
+    defaultFinish: '24K Gold Leaf Gilt & Satin Chestnut',
+    ratePerSqFt: 1450
   },
-  executive_desk: {
-    id: 'f4',
-    name: 'Executive Grand Consul Writing Desk',
-    category: 'study',
+  // 3. Office Furniture
+  office_desk: {
+    id: 'off1',
+    name: 'Executive Teak Conference & Office Desk',
+    category: 'office',
+    basePrice: 125000,
+    woodGrade: 'Burma Teak',
+    defaultFinish: 'Dark Walnut Polish & Cable Channels'
+  },
+  // 4. Master Office / Chairman Chambers
+  master_office_suite: {
+    id: 'mo1',
+    name: 'Chairman Royal Teak Master Office Desk Suite',
+    category: 'master_office',
+    basePrice: 285000,
+    woodGrade: 'Burma Teak',
+    defaultFinish: 'Espresso Lacquer & Italian Gold Marble Top'
+  },
+  // 5. Wall Panelling
+  wall_panelling_classic: {
+    id: 'wp1',
+    name: 'Heritage Teakwood Wainscoting & Wall Panelling',
+    category: 'wall_panelling',
+    basePrice: 135000,
+    woodGrade: 'Burma Teak',
+    defaultFinish: 'Dado Rail & Brass Inlay Trim',
+    ratePerSqFt: 1350
+  },
+  // 6. Wall Mount LED TV Panel Units
+  tv_panel_unit: {
+    id: 'tv1',
+    name: 'Royal Floating Marble & Teak Louvered TV Panel',
+    category: 'tv_panel',
+    basePrice: 145000,
+    woodGrade: 'Teak & Marble',
+    defaultFinish: 'Italian Statuario Marble & Ambient LED Strip'
+  },
+  // 7. Showroom Interiors
+  showroom_interior: {
+    id: 'sh1',
+    name: 'Luxury Retail Showroom Interior & Counter System',
+    category: 'showroom',
+    basePrice: 380000,
+    woodGrade: 'Marine Ply & Glass',
+    defaultFinish: 'High-Gloss Acrylic & Spotlight Display Racks',
+    ratePerSqFt: 1950
+  },
+  // 8. Luxury Executive Office
+  luxury_office_suite: {
+    id: 'lo1',
+    name: 'Turnkey Luxury Executive Office Chamber Suite',
+    category: 'luxury_office',
+    basePrice: 450000,
+    woodGrade: 'Burma Teak',
+    defaultFinish: 'Acoustic Wood Panelling & Leather Lounge'
+  },
+  // 9. Shop Furniture & Retail Display Almirahs
+  shop_display_almirah: {
+    id: 'sa1',
+    name: 'Glass Counter Display Almirah & Retail Racks',
+    category: 'shop_almirah',
     basePrice: 165000,
-    woodGrade: 'Burma Teak',
-    defaultFinish: 'Espresso Polish & Italian Gold Marble'
-  },
-  baroque_console: {
-    id: 'f5',
-    name: 'Baroque Hand-Sculpted Console & Mirror',
-    category: 'accents',
-    basePrice: 115000,
-    woodGrade: 'Burma Teak',
-    defaultFinish: '24K Gold Leaf Gilt'
-  },
-  chesterfield_armchair: {
-    id: 'f6',
-    name: 'Heritage Chesterfield Tufted Armchair',
-    category: 'living',
-    basePrice: 88000,
-    woodGrade: 'Burma Teak',
-    defaultFinish: 'Vintage Cognac Italian Leather'
+    woodGrade: 'Teak & Marble',
+    defaultFinish: 'Tempered Glass & Velvet-lined Jewelry Showcase'
   }
 };
-
-// Turnkey Interior Rate per Sq. Ft. (PriceBase Rates)
-export const PRICEBASE_INTERIOR_RATES = {
-  royal_living_sqft: 1250,
-  emperor_dining_sqft: 1450,
-  master_bedroom_sqft: 1350,
-  turnkey_royal_villa_sqft: 2850,
-};
-
-// Wood & Finish PriceBase Multipliers
-export const PRICEBASE_TIMBER_TIERS: Record<string, MaterialMultiplier> = {
-  classic_teak: {
-    id: 'classic_teak',
-    label: 'Grade-A Seasoned Burma Teak',
-    multiplier: 1.0,
-    description: '100% Seasoned Burma Teak with anti-termite treatment'
-  },
-  teak_marble: {
-    id: 'teak_marble',
-    label: 'Burma Teak & Italian Carrara Marble',
-    multiplier: 1.25,
-    description: 'Burma Teakwood frame paired with 20mm Italian Carrara Marble top'
-  },
-  gold_leaf_royal: {
-    id: 'gold_leaf_royal',
-    label: '24K Gold Leaf Gilt & Italian Leather',
-    multiplier: 1.45,
-    description: 'Genuine 24K Gold foil gilding & imported Italian full-grain leather'
-  }
-};
-
-/**
- * Calculate custom furniture price based on PriceBase rules
- */
-export function calculatePriceBaseCustomItem(
-  basePrice: number,
-  tierId: string,
-  extraTrimMod: number = 0
-): number {
-  const tier = PRICEBASE_TIMBER_TIERS[tierId] || PRICEBASE_TIMBER_TIERS.classic_teak;
-  const calculated = Math.round(basePrice * tier.multiplier + extraTrimMod);
-  return calculated;
-}
-
-/**
- * Calculate turnkey interior cost based on PriceBase rate per sq. ft.
- */
-export function calculatePriceBaseTurnkeyVilla(
-  sqFtArea: number,
-  ratePerSqFt: number = PRICEBASE_INTERIOR_RATES.turnkey_royal_villa_sqft,
-  tierId: string = 'teak_marble'
-): number {
-  const tier = PRICEBASE_TIMBER_TIERS[tierId] || PRICEBASE_TIMBER_TIERS.teak_marble;
-  return Math.round(sqFtArea * ratePerSqFt * tier.multiplier);
-}
 
 /**
  * Format currency amount into Indian Rupee format (e.g. ₹2,65,000)

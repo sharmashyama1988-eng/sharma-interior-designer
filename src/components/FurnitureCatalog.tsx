@@ -2,21 +2,14 @@
 
 import { useState } from 'react';
 import { Search, Star, Eye, MessageSquare, Phone, X, CheckCircle, Sparkles } from 'lucide-react';
-import { FURNITURE_CATALOG, FurnitureItem, getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
+import { CATALOG_CATEGORIES, FURNITURE_CATALOG, FurnitureItem, getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
 export default function FurnitureCatalog() {
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedItem, setSelectedItem] = useState<FurnitureItem | null>(null);
 
-  const categories = [
-    { id: 'all', label: 'All Collections' },
-    { id: 'living', label: 'Living Room' },
-    { id: 'dining', label: 'Dining Suites' },
-    { id: 'bedroom', label: 'Bedroom Suites' },
-    { id: 'study', label: 'Executive Study' },
-    { id: 'accents', label: 'Carved Accents' },
-  ];
+  const categories = CATALOG_CATEGORIES;
 
   const filteredItems = FURNITURE_CATALOG.filter((item) => {
     const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
