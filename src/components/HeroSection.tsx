@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ShieldCheck, MessageSquare, Phone, ArrowRight, Award, Compass, Sparkles } from 'lucide-react';
+import { MessageSquare, Phone, ArrowRight, Sparkles } from 'lucide-react';
 import { PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
 
 const HERO_SLIDES = [
@@ -38,13 +38,13 @@ export default function HeroSection() {
   const slide = HERO_SLIDES[currentSlide];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden bg-classical-bg">
-      {/* Background Image Carousel with Overlay */}
+    <section className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden bg-classical-bg">
+      {/* Background Image Carousel with Warm Overlay */}
       {HERO_SLIDES.map((s, idx) => (
         <div
           key={idx}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            idx === currentSlide ? 'opacity-40 scale-105 transition-transform duration-[7000ms]' : 'opacity-0 scale-100'
+            idx === currentSlide ? 'opacity-85 scale-105 transition-transform duration-[7000ms]' : 'opacity-0 scale-100'
           }`}
           style={{
             backgroundImage: `url(${s.image})`,
@@ -54,27 +54,23 @@ export default function HeroSection() {
         />
       ))}
 
-      {/* Classical Radial & Gradient Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-classical-bg via-classical-bg/90 to-transparent z-10" />
-      <div className="absolute inset-0 bg-gradient-to-t from-classical-bg via-transparent to-black/60 z-10" />
-
-      {/* Decorative Classical Borders */}
-      <div className="absolute top-28 left-6 bottom-12 w-[1px] bg-gradient-to-b from-transparent via-classical-gold/30 to-transparent hidden lg:block z-20" />
-      <div className="absolute top-28 right-6 bottom-12 w-[1px] bg-gradient-to-b from-transparent via-classical-gold/30 to-transparent hidden lg:block z-20" />
+      {/* Classical Radial & Gradient Overlays for Sunlight Luxury Look */}
+      <div className="absolute inset-0 bg-gradient-to-r from-classical-bg via-classical-bg/85 to-transparent z-10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-classical-bg via-transparent to-white/40 z-10" />
 
       {/* Hero Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="max-w-3xl">
           {/* Subtitle Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-classical-card/90 border border-classical-gold/50 backdrop-blur-md mb-6">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-classical-gold/60 shadow-md backdrop-blur-md mb-6">
             <Sparkles className="w-4 h-4 text-classical-gold animate-pulse" />
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-classical-gold">
+            <span className="text-xs uppercase tracking-[0.2em] font-extrabold text-classical-mahogany">
               {slide.subtitle}
             </span>
           </div>
 
           {/* Main Headline */}
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-classical-cream leading-[1.15] mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-classical-mahogany leading-[1.15] mb-6">
             {slide.title.split('&')[0]} &{' '}
             <span className="gold-text-gradient block italic font-normal">
               {slide.title.split('&')[1] || ''}
@@ -82,7 +78,7 @@ export default function HeroSection() {
           </h1>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-classical-creamMuted font-light leading-relaxed mb-8 max-w-2xl">
+          <p className="text-base sm:text-lg text-classical-textMuted font-normal leading-relaxed mb-8 max-w-2xl">
             {slide.desc}
           </p>
 
@@ -93,16 +89,16 @@ export default function HeroSection() {
               href={getWhatsAppLink(`Hello Sharma Interior Designer, I would like to inquire about ${slide.title}.`)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-7 py-4 text-sm font-bold uppercase tracking-wider text-black bg-gold-gradient rounded shadow-gold-glow hover:scale-105 transition-all transform"
+              className="inline-flex items-center gap-3 px-7 py-4 text-xs font-extrabold uppercase tracking-wider text-white bg-classical-mahogany hover:bg-classical-mahoganyLight rounded shadow-gold-glow hover:scale-105 transition-all transform"
             >
-              <MessageSquare className="w-5 h-5 fill-black" />
+              <MessageSquare className="w-5 h-5 fill-white" />
               <span>Inquire on WhatsApp</span>
             </a>
 
             {/* Direct Call Link */}
             <a
               href={`tel:${PHONE_NUMBER}`}
-              className="inline-flex items-center gap-3 px-6 py-4 text-sm font-semibold text-classical-cream bg-classical-card/90 border border-classical-border hover:border-classical-gold rounded hover:bg-classical-card transition-all"
+              className="inline-flex items-center gap-3 px-6 py-4 text-xs font-bold text-classical-mahogany bg-white border border-classical-border hover:border-classical-gold rounded hover:bg-classical-card shadow-sm transition-all"
             >
               <Phone className="w-4 h-4 text-classical-gold" />
               <span>Call {PHONE_NUMBER}</span>
@@ -111,7 +107,7 @@ export default function HeroSection() {
             {/* Explore Catalog Link */}
             <a
               href="#catalog"
-              className="inline-flex items-center gap-2 text-sm text-classical-gold hover:text-white transition-colors underline underline-offset-8 decoration-classical-gold/50 hover:decoration-classical-gold px-2"
+              className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-classical-gold hover:text-classical-mahogany transition-colors underline underline-offset-8 decoration-classical-gold px-2"
             >
               <span>Explore Designs</span>
               <ArrowRight className="w-4 h-4" />
@@ -119,18 +115,18 @@ export default function HeroSection() {
           </div>
 
           {/* Key Stat Badges */}
-          <div className="grid grid-cols-3 gap-4 pt-6 border-t border-classical-border/50 max-w-xl">
+          <div className="grid grid-cols-3 gap-4 pt-6 border-t border-classical-border max-w-xl">
             <div className="flex flex-col">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-classical-gold">28+</span>
-              <span className="text-xs text-classical-creamMuted uppercase tracking-wider mt-1">Years Legacy</span>
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-classical-mahogany">28+</span>
+              <span className="text-xs text-classical-textMuted font-bold uppercase tracking-wider mt-1">Years Legacy</span>
             </div>
-            <div className="flex flex-col border-l border-classical-border/50 pl-4">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-classical-gold">500+</span>
-              <span className="text-xs text-classical-creamMuted uppercase tracking-wider mt-1">Villas & Homes</span>
+            <div className="flex flex-col border-l border-classical-border pl-4">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-classical-mahogany">500+</span>
+              <span className="text-xs text-classical-textMuted font-bold uppercase tracking-wider mt-1">Villas & Homes</span>
             </div>
-            <div className="flex flex-col border-l border-classical-border/50 pl-4">
-              <span className="font-serif text-2xl sm:text-3xl font-bold text-classical-gold">100%</span>
-              <span className="text-xs text-classical-creamMuted uppercase tracking-wider mt-1">Solid Burma Teak</span>
+            <div className="flex flex-col border-l border-classical-border pl-4">
+              <span className="font-serif text-2xl sm:text-3xl font-bold text-classical-mahogany">100%</span>
+              <span className="text-xs text-classical-textMuted font-bold uppercase tracking-wider mt-1">Solid Burma Teak</span>
             </div>
           </div>
         </div>
