@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     'Luxury Villa Interior',
     'WhatsApp Inquiry 9801197102'
   ],
+  icons: {
+    icon: '/favicon.jpg',
+    shortcut: '/favicon.jpg',
+    apple: '/logo.jpg',
+  },
+  openGraph: {
+    title: 'Sharma Interior Designer & Fine Furniture',
+    description: 'Bespoke classical furniture designs & royal villa interiors.',
+    images: ['/logo.jpg'],
+  },
 };
 
 export default function RootLayout({

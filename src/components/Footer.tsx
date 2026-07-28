@@ -15,8 +15,12 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full border border-classical-gold flex items-center justify-center bg-classical-mahogany">
-                <Sparkles className="w-5 h-5 text-classical-gold" />
+              <div className="w-11 h-11 rounded-full border border-classical-gold overflow-hidden bg-classical-mahogany flex-shrink-0">
+                <img
+                  src="/logo.jpg"
+                  alt="Sharma Interior Designer Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="font-serif text-2xl font-bold tracking-wider text-classical-cream">
                 SHARMA

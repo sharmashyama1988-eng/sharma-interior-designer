@@ -41,8 +41,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-full border border-classical-gold flex items-center justify-center bg-classical-mahogany/80 group-hover:shadow-gold-glow transition-all">
-            <Sparkles className="w-5 h-5 text-classical-gold" />
+          <div className="w-11 h-11 rounded-full border border-classical-gold overflow-hidden bg-classical-mahogany/80 group-hover:shadow-gold-glow transition-all flex-shrink-0">
+            <img
+              src="/logo.jpg"
+              alt="Sharma Interior Designer Logo"
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
           </div>
           <div>
             <span className="font-serif text-xl sm:text-2xl font-bold tracking-wider text-classical-cream block leading-none">
