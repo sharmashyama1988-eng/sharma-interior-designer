@@ -38,11 +38,11 @@ export default function ArchitectBio() {
             <div className="relative mx-auto max-w-md rounded-2xl overflow-hidden border-2 border-classical-gold/40 shadow-gold-glow group">
               <div className="relative h-[480px] w-full bg-classical-card">
                 <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"
+                  src="/satya-narayan-sharma.jpg"
                   alt="Principal Architect Satya Narayan Sharma - Lead Interior Designer and Master Craftsman"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
-                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="object-cover object-top filter contrast-105 group-hover:scale-105 transition-all duration-700"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />

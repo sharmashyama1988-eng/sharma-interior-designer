@@ -9,7 +9,7 @@ const ARTISANS = [
     role: 'Principal Architect & Founder',
     experience: '28+ Years Experience',
     bio: 'Pioneer of classical teakwood carving, modular kitchen engineering, and luxury interior architecture in Bihar & NCR. Oversees all custom bespoke projects.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop'
+    image: '/satya-narayan-sharma.jpg'
   },
   {
     name: 'Shankar Vishwakarma',

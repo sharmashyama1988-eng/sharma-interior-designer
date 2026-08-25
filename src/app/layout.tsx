@@ -165,7 +165,7 @@ export default function RootLayout({
       name: 'Sharma Interior Designers',
     },
     url: 'https://sharma-interior-designer.vercel.app',
-    image: 'https://sharma-interior-designer.vercel.app/logo.jpg',
+    image: 'https://sharma-interior-designer.vercel.app/satya-narayan-sharma.jpg',
     description: 'Principal Architect and master woodcraft artisan with 28+ years of expertise in luxury classical furniture, modern modular kitchens, and turnkey villa interior architecture.',
     knowsAbout: [
       'Interior Architecture',
