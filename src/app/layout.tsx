@@ -6,10 +6,11 @@ import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sharma-interior-designer.vercel.app'),
-  title: 'Sharma Interior Designer & Fine Furniture | 28+ Years Legacy',
+  title: 'Sharma Interior Designer & Fine Furniture',
   description: 'Premier classical furniture studio & luxury interior design architecture. Handcrafted Burma Teakwood furniture, royal sofa sets, emperor dining tables, 4-poster beds & complete villa interiors. Direct Phone: 9801197102.',
-  applicationName: 'Sharma Interior Designer',
+  applicationName: 'Sharma Interior Designer & Fine Furniture',
   keywords: [
+    'Sharma Interior Designer & Fine Furniture',
     'Sharma Interior Designer',
     'Sharma Interior',
     'Sharma Furniture',
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     apple: '/logo.jpg',
   },
   openGraph: {
-    siteName: 'Sharma Interior Designer',
+    siteName: 'Sharma Interior Designer & Fine Furniture',
     title: 'Sharma Interior Designer & Fine Furniture',
     description: 'Bespoke classical furniture designs & royal villa interiors.',
     url: 'https://sharma-interior-designer.vercel.app/',
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   other: {
-    'apple-mobile-web-app-title': 'Sharma Interior Designer',
+    'apple-mobile-web-app-title': 'Sharma Interior Designer & Fine Furniture',
   },
   verification: {
     google: 'pE_h0mGnQTI35A2Z6drNRWA-dWCQQ6QhKz7be-Mq78g',
@@ -50,8 +51,8 @@ export default function RootLayout({
   const jsonLdWebSite = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Sharma Interior Designer',
-    alternateName: ['Sharma Interior', 'Sharma Furniture'],
+    name: 'Sharma Interior Designer & Fine Furniture',
+    alternateName: ['Sharma Interior Designer', 'Sharma Interior', 'Sharma Furniture'],
     url: 'https://sharma-interior-designer.vercel.app/',
   };
 
