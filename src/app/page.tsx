@@ -15,10 +15,12 @@ import JournalSection from '@/components/JournalSection';
 import AwardsPress from '@/components/AwardsPress';
 import FaqSection from '@/components/FaqSection';
 import ContactInquiry from '@/components/ContactInquiry';
+import BookingHashListener from '@/components/BookingHashListener';
 
 export default function Home() {
   return (
     <>
+      <BookingHashListener />
       <HeroSection />
       <HeritageAbout />
       <ServicesSection />
