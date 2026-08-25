@@ -25,7 +25,7 @@ export default function ArchitectBio() {
   ];
 
   return (
-    <section id="architect" className="py-24 bg-classical-bg relative overflow-hidden border-t border-classical-border/40">
+    <section id="architect" className="py-24 scroll-mt-28 bg-classical-bg relative overflow-hidden border-t border-classical-border/40">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-classical-gold/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-classical-gold/5 rounded-full blur-3xl pointer-events-none" />
@@ -35,27 +35,27 @@ export default function ArchitectBio() {
           
           {/* Visual Column */}
           <div className="lg:col-span-5 relative">
-            <div className="relative mx-auto max-w-md rounded-2xl overflow-hidden border-2 border-classical-gold/40 shadow-gold-glow group">
-              <div className="relative h-[480px] w-full bg-classical-card">
+            <div className="relative mx-auto max-w-md rounded-2xl overflow-hidden border-2 border-classical-gold/60 shadow-gold-glow group bg-black/40">
+              <div className="relative h-[480px] w-full bg-classical-card overflow-hidden">
                 <Image
                   src="/satya-narayan-sharma.jpg"
                   alt="Principal Architect Satya Narayan Sharma - Lead Interior Designer and Master Craftsman"
                   fill
                   sizes="(max-width: 768px) 100vw, 500px"
-                  className="object-cover object-top filter contrast-105 group-hover:scale-105 transition-all duration-700"
+                  className="object-cover object-top filter brightness-105 contrast-110 group-hover:scale-105 transition-all duration-700"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20 pointer-events-none" />
                 
                 {/* Floating Experience Tag */}
-                <div className="absolute top-4 left-4 bg-gold-gradient text-black px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-1.5">
+                <div className="absolute top-4 left-4 bg-gold-gradient text-black px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-1.5 z-10">
                   <Award className="w-4 h-4 fill-black" />
                   <span>28+ Years Master Legacy</span>
                 </div>
 
                 {/* Bottom Overlay Label */}
-                <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-black/80 backdrop-blur-md border border-classical-gold/30">
-                  <div className="text-xs uppercase tracking-widest text-classical-gold font-bold">Principal Architect & Founder</div>
+                <div className="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-classical-gold/40 shadow-2xl z-10">
+                  <div className="text-[11px] uppercase tracking-widest text-classical-gold font-bold">Principal Architect & Founder</div>
                   <h3 className="font-serif text-2xl font-bold text-white mt-0.5">Satya Narayan Sharma</h3>
                   <p className="text-[11px] text-gray-300 mt-1 font-light">Lead Architectural Designer | Master Woodcraft Visionary</p>
                 </div>

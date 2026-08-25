@@ -65,12 +65,16 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6">
+        <nav className="hidden xl:flex items-center gap-4 2xl:gap-6 flex-shrink-0">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-xs uppercase tracking-widest text-classical-creamMuted hover:text-classical-gold transition-colors font-medium hover:scale-105 transform"
+              className={`text-[11px] 2xl:text-xs uppercase tracking-wider transition-colors font-medium hover:scale-105 transform whitespace-nowrap ${
+                link.name === 'Architect'
+                  ? 'text-classical-gold font-bold border-b border-classical-gold/60 pb-0.5'
+                  : 'text-classical-creamMuted hover:text-classical-gold'
+              }`}
             >
               {link.name}
             </a>
@@ -78,13 +82,13 @@ export default function Navbar() {
         </nav>
 
         {/* Contact CTA & WhatsApp Button */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2.5 flex-shrink-0">
           {/* Direct Phone Link */}
           <a
             href={`tel:${PHONE_NUMBER}`}
-            className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-classical-cream bg-classical-card border border-classical-border hover:border-classical-gold rounded shadow-sm hover:text-classical-gold transition-all"
+            className="flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-semibold text-classical-cream bg-classical-card border border-classical-border hover:border-classical-gold rounded shadow-sm hover:text-classical-gold transition-all whitespace-nowrap"
           >
-            <Phone className="w-3.5 h-3.5 text-classical-gold" />
+            <Phone className="w-3 h-3 text-classical-gold" />
             <span>{PHONE_NUMBER}</span>
           </a>
 
@@ -93,26 +97,26 @@ export default function Navbar() {
             href={getWhatsAppLink()}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-black bg-gold-gradient hover:opacity-95 rounded shadow-gold-sm hover:shadow-gold-glow transition-all transform hover:-translate-y-0.5"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-wider text-black bg-gold-gradient hover:opacity-95 rounded shadow-gold-sm hover:shadow-gold-glow transition-all transform hover:-translate-y-0.5 whitespace-nowrap"
           >
-            <MessageSquare className="w-4 h-4 fill-black" />
+            <MessageSquare className="w-3.5 h-3.5 fill-black" />
             <span>Inquire Now</span>
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile / Tablet Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-classical-gold hover:text-white focus:outline-none"
+          className="xl:hidden p-2 text-classical-gold hover:text-white focus:outline-none flex-shrink-0"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile / Tablet Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-classical-card/98 border-b border-classical-gold/30 px-4 pt-4 pb-6 mt-2 backdrop-blur-xl animate-fadeIn">
+        <div className="xl:hidden bg-classical-card/98 border-b border-classical-gold/30 px-4 pt-4 pb-6 mt-2 backdrop-blur-xl animate-fadeIn">
           <div className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <a
