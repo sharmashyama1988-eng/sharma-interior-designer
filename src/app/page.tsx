@@ -7,7 +7,6 @@ import ModularKitchenAlmirah from '@/components/ModularKitchenAlmirah';
 import MicaDesignSelector from '@/components/MicaDesignSelector';
 import InteractiveCustomizer from '@/components/InteractiveCustomizer';
 import MaterialCraftsmanship from '@/components/MaterialCraftsmanship';
-import ArtisansSpotlight from '@/components/ArtisansSpotlight';
 import CostEstimator from '@/components/CostEstimator';
 import ProjectPortfolio from '@/components/ProjectPortfolio';
 import VirtualShowroom from '@/components/VirtualShowroom';
@@ -32,7 +31,6 @@ export default function Home() {
       <MicaDesignSelector />
       <InteractiveCustomizer />
       <MaterialCraftsmanship />
-      <ArtisansSpotlight />
       <CostEstimator />
       <ProjectPortfolio />
       <VirtualShowroom />
