@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Armchair, Compass, Home, Building2, RefreshCw, Box, ArrowRight, MessageSquare } from 'lucide-react';
 import { getWhatsAppLink } from '@/data/furnitureData';
 
@@ -79,13 +80,15 @@ export default function ServicesSection() {
                 <div>
                   {/* Service Image with Overlay */}
                   <div className="relative h-48 overflow-hidden">
-                    <img
+                    <Image
                       src={srv.image}
-                      alt={srv.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      alt={`${srv.title} - Interior Architecture Service by Satya Narayan Sharma`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-black/40 to-transparent" />
-                    <div className="absolute top-4 left-4 p-2.5 rounded-md bg-classical-bg/90 border border-classical-gold/40 text-classical-gold">
+                    <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-black/40 to-transparent pointer-events-none" />
+                    <div className="absolute top-4 left-4 p-2.5 rounded-md bg-classical-bg/90 border border-classical-gold/40 text-classical-gold z-10">
                       <IconComp className="w-5 h-5" />
                     </div>
                   </div>

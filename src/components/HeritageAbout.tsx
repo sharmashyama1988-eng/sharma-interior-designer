@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Award, Compass, ShieldCheck, Hammer, MessageSquare, Phone } from 'lucide-react';
 import { PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
 
@@ -37,14 +38,16 @@ export default function HeritageAbout() {
           {/* Left Column: Visual Grid */}
           <div className="lg:col-span-6 grid grid-cols-2 gap-4">
             <div className="space-y-4">
-              <div className="relative rounded-lg overflow-hidden border border-classical-gold/30 shadow-classical-deep group">
-                <img
+              <div className="relative h-64 rounded-lg overflow-hidden border border-classical-gold/30 shadow-classical-deep group">
+                <Image
                   src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop"
-                  alt="Classical Hand Carved Teak Sofa"
-                  className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Classical Hand Carved Teakwood Living Room Suite Designed by Architect Satya Narayan Sharma"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 300px"
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 text-xs font-serif text-classical-gold italic">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <span className="absolute bottom-3 left-3 text-xs font-serif text-classical-gold italic z-10">
                   Royal Living Room Suite
                 </span>
               </div>
@@ -59,14 +62,16 @@ export default function HeritageAbout() {
                 <span className="font-serif text-4xl font-bold text-classical-gold block mb-1">500+</span>
                 <span className="text-xs uppercase tracking-widest text-classical-creamMuted">Bespoke Projects</span>
               </div>
-              <div className="relative rounded-lg overflow-hidden border border-classical-gold/30 shadow-classical-deep group">
-                <img
+              <div className="relative h-64 rounded-lg overflow-hidden border border-classical-gold/30 shadow-classical-deep group">
+                <Image
                   src="https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800&auto=format&fit=crop"
-                  alt="Classical Dining Suite Craftsmanship"
-                  className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  alt="Classical Dining Suite Craftsmanship and Teakwood Architecture by Satya Narayan Sharma"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 300px"
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <span className="absolute bottom-3 left-3 text-xs font-serif text-classical-gold italic">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
+                <span className="absolute bottom-3 left-3 text-xs font-serif text-classical-gold italic z-10">
                   Emperor Carved Dining Table
                 </span>
               </div>

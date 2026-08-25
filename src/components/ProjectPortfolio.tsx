@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Compass, MapPin, Calendar, CheckCircle2, MessageSquare, ArrowRight } from 'lucide-react';
 import { PROJECTS_GALLERY, ProjectItem, getWhatsAppLink } from '@/data/furnitureData';
 
@@ -71,12 +72,14 @@ export default function ProjectPortfolio() {
                 <div>
                   {/* Image Showcase with Before/After Toggle */}
                   <div className="relative h-72 sm:h-80 overflow-hidden bg-black">
-                    <img
+                    <Image
                       src={currentImg}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-all duration-700"
+                      alt={`${project.title} - Architectural Interior Project by Principal Architect Satya Narayan Sharma in ${project.location}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-all duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-black/40" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-black/40 pointer-events-none" />
 
                     {/* Category & Location Badges */}
                     <div className="absolute top-4 left-4 flex flex-wrap gap-2">

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Palette, Layers, Check, Sparkles, MessageSquare, Phone, ShieldCheck, Eye } from 'lucide-react';
 import { getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
@@ -143,12 +144,14 @@ export default function MicaDesignSelector() {
           {/* Left Live Surface Previewer */}
           <div className="lg:col-span-6 space-y-4">
             <div className="relative h-72 sm:h-96 rounded-lg overflow-hidden border-2 border-classical-gold/60 bg-black group">
-              <img
+              <Image
                 src={selectedDesign.previewImg}
-                alt={selectedDesign.name}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt={`${selectedDesign.name} (${selectedDesign.code}) - High pressure decorative laminate selected by Architect Satya Narayan Sharma`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
 
               {/* Code Badge */}
               <div className="absolute top-4 left-4 px-3 py-1.5 rounded bg-gold-gradient text-black font-extrabold text-xs tracking-wider shadow-gold-sm">

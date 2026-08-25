@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Eye, Sparkles, MessageSquare, Plus, Info } from 'lucide-react';
 import { getWhatsAppLink } from '@/data/furnitureData';
 
@@ -76,12 +77,14 @@ export default function VirtualShowroom() {
 
         {/* Interactive Canvas Container */}
         <div className="relative h-[450px] sm:h-[550px] rounded-xl overflow-hidden border border-classical-gold/40 shadow-classical-deep group">
-          <img
+          <Image
             src={activeRoom.image}
-            alt={activeRoom.name}
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+            alt={`${activeRoom.name} - 3D Virtual Showroom Designed by Architect Satya Narayan Sharma`}
+            fill
+            sizes="(max-width: 1200px) 100vw, 1200px"
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
 
           {/* Interactive Hotspots */}
           {activeRoom.hotspots.map((spot) => (

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { ChefHat, DoorClosed, Sparkles, CheckCircle2, MessageSquare, Phone, ShieldCheck } from 'lucide-react';
 import { getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
@@ -137,12 +138,14 @@ export default function ModularKitchenAlmirah() {
               <div>
                 {/* Image Container */}
                 <div className="relative h-72 sm:h-80 overflow-hidden bg-black">
-                  <img
+                  <Image
                     src={work.image}
-                    alt={work.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    alt={`${work.title} - Custom Interior Architecture by Architect Satya Narayan Sharma`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-black/40" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-black/40 pointer-events-none" />
 
                   {/* Rate Badge */}
                   <div className="absolute top-4 left-4">

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Sparkles, Phone, MessageSquare, MapPin, ArrowUp } from 'lucide-react';
 import { PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
 
@@ -15,11 +16,13 @@ export default function Footer() {
           {/* Brand Col */}
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full border border-classical-gold overflow-hidden bg-classical-mahogany flex-shrink-0">
-                <img
+              <div className="w-11 h-11 rounded-full border border-classical-gold overflow-hidden bg-classical-mahogany flex-shrink-0 relative">
+                <Image
                   src="/logo.jpg"
-                  alt="Sharma Interior Designer Logo"
-                  className="w-full h-full object-cover"
+                  alt="Sharma Interior Designers Logo - Lead Architect Satya Narayan Sharma"
+                  fill
+                  sizes="44px"
+                  className="object-cover"
                 />
               </div>
               <span className="font-serif text-2xl font-bold tracking-wider text-classical-cream">
@@ -27,7 +30,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-classical-creamMuted font-light leading-relaxed">
-              28+ Years of excellence in classical teakwood furniture manufacturing, royal villa interiors, and architectural design.
+              Led by Principal Architect <strong>Satya Narayan Sharma</strong> with 28+ Years of excellence in classical teakwood furniture manufacturing, luxury modular kitchens, and turnkey villa architecture.
             </p>
             <div className="pt-2">
               <span className="text-[10px] text-classical-gold uppercase tracking-widest block font-semibold">
@@ -45,7 +48,9 @@ export default function Footer() {
               Quick Navigation
             </h4>
             <ul className="space-y-2.5 text-xs text-classical-creamMuted">
+              <li><a href="#architect" className="hover:text-classical-gold transition-colors text-classical-gold font-medium">Principal Architect</a></li>
               <li><a href="#catalog" className="hover:text-classical-gold transition-colors">Furniture Catalog</a></li>
+              <li><a href="#kitchen-almirah" className="hover:text-classical-gold transition-colors">Kitchen & Almirahs</a></li>
               <li><a href="#customizer" className="hover:text-classical-gold transition-colors">3D Customizer</a></li>
               <li><a href="#services" className="hover:text-classical-gold transition-colors">Interior Services</a></li>
               <li><a href="#portfolio" className="hover:text-classical-gold transition-colors">Project Portfolio</a></li>

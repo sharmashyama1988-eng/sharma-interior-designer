@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Search, Star, Eye, MessageSquare, Phone, X, CheckCircle, Sparkles } from 'lucide-react';
 import { CATALOG_CATEGORIES, FURNITURE_CATALOG, FurnitureItem, getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
@@ -86,12 +87,14 @@ export default function FurnitureCatalog() {
                 <div>
                   {/* Image Container */}
                   <div className="relative h-64 overflow-hidden bg-black/40">
-                    <img
+                    <Image
                       src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      alt={`${item.name} - Handcrafted furniture design by Principal Architect Satya Narayan Sharma`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent pointer-events-none" />
 
                     {/* Featured / Customizable Badge */}
                     {item.featured && (
@@ -183,13 +186,15 @@ export default function FurnitureCatalog() {
               </button>
 
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="h-64 md:h-auto relative bg-black">
-                  <img
+                <div className="h-64 md:h-auto min-h-[300px] relative bg-black">
+                  <Image
                     src={selectedItem.image}
-                    alt={selectedItem.name}
-                    className="w-full h-full object-cover"
+                    alt={`${selectedItem.name} - Detailed architectural furniture view by Satya Narayan Sharma`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent md:hidden" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent md:hidden pointer-events-none" />
                 </div>
 
                 <div className="p-6 md:p-8 space-y-5 flex flex-col justify-between">

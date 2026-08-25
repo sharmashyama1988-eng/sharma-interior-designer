@@ -1,13 +1,14 @@
 'use client';
 
+import Image from 'next/image';
 import { Award, Hammer, Users, Sparkles } from 'lucide-react';
 
 const ARTISANS = [
   {
-    name: 'Master Ramakant Sharma',
-    role: 'Founder & Chief Wood Architect',
+    name: 'Satya Narayan Sharma',
+    role: 'Principal Architect & Founder',
     experience: '28+ Years Experience',
-    bio: 'Pioneer of classical teakwood carving and architectural woodwork in Bihar & NCR. Oversees every custom royal design.',
+    bio: 'Pioneer of classical teakwood carving, modular kitchen engineering, and luxury interior architecture in Bihar & NCR. Oversees all custom bespoke projects.',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop'
   },
   {
@@ -52,10 +53,12 @@ export default function ArtisansSpotlight() {
               className="bg-classical-card rounded-xl border border-classical-border hover:border-classical-gold/60 overflow-hidden transition-all duration-300 hover:shadow-gold-glow flex flex-col justify-between"
             >
               <div className="relative h-72 overflow-hidden">
-                <img
+                <Image
                   src={art.image}
-                  alt={art.name}
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  alt={`${art.name} - ${art.role} at Sharma Interior Designers`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent" />
                 <span className="absolute top-4 left-4 px-3 py-1 text-[10px] uppercase font-bold tracking-widest bg-gold-gradient text-black rounded">

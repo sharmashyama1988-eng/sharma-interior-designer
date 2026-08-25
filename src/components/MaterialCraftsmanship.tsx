@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Layers, ShieldCheck, Sparkles, MessageSquare } from 'lucide-react';
 import { getWhatsAppLink } from '@/data/furnitureData';
 
@@ -89,12 +90,14 @@ export default function MaterialCraftsmanship() {
           {/* Active Material Showcase */}
           <div className="lg:col-span-7 space-y-6">
             <div className="relative h-64 sm:h-80 rounded-lg overflow-hidden border border-classical-gold/40">
-              <img
+              <Image
                 src={activeMaterial.image}
-                alt={activeMaterial.name}
-                className="w-full h-full object-cover"
+                alt={`${activeMaterial.name} - Premium craftsmanship material curated by Architect Satya Narayan Sharma`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4">
                 <span className="text-xs uppercase tracking-widest text-classical-gold font-bold block mb-1">
                   {activeMaterial.type}

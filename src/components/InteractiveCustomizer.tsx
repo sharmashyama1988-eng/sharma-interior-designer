@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { Sliders, Sparkles, MessageSquare, Phone, Check, RefreshCw } from 'lucide-react';
 import { getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
@@ -67,11 +68,13 @@ export default function InteractiveCustomizer() {
           {/* Left Preview Box */}
           <div className="lg:col-span-7 relative bg-black/60 min-h-[400px] lg:min-h-[550px] flex items-center justify-center p-8 overflow-hidden group">
             {/* Live Visualizer Render Image */}
-            <div className="relative w-full h-full flex items-center justify-center">
-              <img
+            <div className="relative w-full h-full min-h-[350px] flex items-center justify-center">
+              <Image
                 src={selectedFurniture.img}
-                alt={selectedFurniture.name}
-                className="w-full h-full object-cover rounded-lg shadow-2xl transition-all duration-700 filter group-hover:brightness-105"
+                alt={`${selectedFurniture.name} - Custom configured architectural design by Satya Narayan Sharma`}
+                fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                className="object-cover rounded-lg shadow-2xl transition-all duration-700 filter group-hover:brightness-105"
               />
 
               {/* Tint overlay representing chosen wood finish */}

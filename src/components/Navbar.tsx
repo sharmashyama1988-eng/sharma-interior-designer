@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Phone, MessageSquare, Menu, X, Sparkles } from 'lucide-react';
 import { PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
 
@@ -23,6 +24,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Collections', href: '#catalog' },
     { name: 'Kitchen & Almirah', href: '#kitchen-almirah' },
+    { name: 'Architect', href: '#architect' },
     { name: 'Mica & Doors', href: '#mica-selector' },
     { name: '3D Customizer', href: '#customizer' },
     { name: 'Services', href: '#services' },
@@ -42,11 +44,14 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 rounded-full border border-classical-gold overflow-hidden bg-classical-mahogany/80 group-hover:shadow-gold-glow transition-all flex-shrink-0">
-            <img
+          <div className="w-11 h-11 rounded-full border border-classical-gold overflow-hidden bg-classical-mahogany/80 group-hover:shadow-gold-glow transition-all flex-shrink-0 relative">
+            <Image
               src="/logo.jpg"
-              alt="Sharma Interior Designer Logo"
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              alt="Sharma Interior Designers Logo - Lead Architect Satya Narayan Sharma"
+              fill
+              sizes="44px"
+              className="object-cover group-hover:scale-110 transition-transform duration-300"
+              priority
             />
           </div>
           <div>

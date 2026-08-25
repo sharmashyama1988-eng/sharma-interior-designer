@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { BookOpen, ArrowRight, MessageSquare } from 'lucide-react';
 import { getWhatsAppLink } from '@/data/furnitureData';
 
@@ -44,7 +45,7 @@ export default function JournalSection() {
             Classical Woodcraft & <span className="gold-text-gradient italic">Design Journal</span>
           </h2>
           <p className="text-classical-creamMuted text-sm sm:text-base font-light">
-            Insights, timber selection guides, and architectural trends curated by our chief wood architects.
+            Insights, timber selection guides, and architectural trends curated by Principal Architect Satya Narayan Sharma.
           </p>
         </div>
 
@@ -57,13 +58,15 @@ export default function JournalSection() {
             >
               <div>
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <Image
                     src={art.image}
-                    alt={art.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    alt={`${art.title} - Architectural Guide by Satya Narayan Sharma`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent" />
-                  <span className="absolute top-4 left-4 px-2.5 py-1 text-[10px] uppercase font-bold tracking-widest bg-classical-bg/90 text-classical-gold border border-classical-gold/30 rounded">
+                  <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent pointer-events-none" />
+                  <span className="absolute top-4 left-4 px-2.5 py-1 text-[10px] uppercase font-bold tracking-widest bg-classical-bg/90 text-classical-gold border border-classical-gold/30 rounded z-10">
                     {art.category}
                   </span>
                 </div>
