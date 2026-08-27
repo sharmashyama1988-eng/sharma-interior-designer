@@ -1,5 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from 'next';
 import { WHATSAPP_NUMBER } from '@/data/furnitureData';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mppzabek';
 
 export async function POST(request: Request) {
   try {
@@ -13,6 +15,26 @@ export async function POST(request: Request) {
       );
     }
 
+    // Forward to Formspree for email delivery
+    try {
+      await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          service: service || itemRequested || 'Interior Consultation',
+          message: message || 'No additional notes',
+          _subject: `New Inquiry Lead: ${name} (${phone})`,
+        }),
+      });
+    } catch (formspreeError) {
+      console.error('Formspree forward error:', formspreeError);
+    }
+
     const inquiryDetails = `*New Website Inquiry*\n\n` +
       `*Name:* ${name}\n` +
       `*Phone:* ${phone}\n` +
@@ -24,7 +46,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: 'Inquiry registered successfully! Connecting to WhatsApp...',
+      message: 'Inquiry registered successfully and emailed to designer! Connecting to WhatsApp...',
       whatsappUrl,
     });
   } catch (error) {

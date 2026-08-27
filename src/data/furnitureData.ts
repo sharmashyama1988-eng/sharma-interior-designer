@@ -75,7 +75,7 @@ export const CATALOG_CATEGORIES = [
 
 export const FURNITURE_CATALOG: FurnitureItem[] = [
   // ==========================================
-  // 1. LIVING ROOM FURNITURE (2026 LUXURY TRENDS)
+  // 1. LIVING ROOM FURNITURE (2026 LUXURY SUITES)
   // ==========================================
   {
     id: "LR-MOD-01",
@@ -87,7 +87,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Burma Teak Internal Frame",
     finish: "Textured Cream Bouclé & Brushed Brass Plinth",
     dimensions: "128\" W x 68\" D x 32\" H (5-Piece Configurable)",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
+    image: "/modular_boucle_sofa.jpg",
     description: "Ultra-luxurious 5-module sectional sofa upholstered in premium anti-stain ivory bouclé fabric, built upon a kiln-seasoned Burma teak hardwood chassis with magnetic locking fasteners.",
     isCustomizable: true,
     featured: true
@@ -102,7 +102,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Curved Steam-Bent Teak & Birch",
     finish: "Deep Emerald Velvet & Brushed Brass Shadow Base",
     dimensions: "102\" W x 42\" D x 33\" H",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    image: "/curved_emerald_sofa.jpg",
     description: "Flowing biomorphic curved silhouette sofa featuring multi-density ergonomic foam, hand-stitched velvet upholstery, and a floating gold brass shadow line plinth.",
     isCustomizable: true,
     featured: true
@@ -132,7 +132,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Burma Teak Legs with Brass Ferrules",
     finish: "Channel-Tufted Golden Amber Velvet",
     dimensions: "34\" W x 32\" D x 36\" H",
-    image: "https://images.unsplash.com/photo-1580481072645-022f9a6d8310?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
     description: "Showstopping statement armchair with vertical channel fluting, barrel curved backrest, plush 40-density foam seat, and solid teak tapered legs capped in gold brass.",
     isCustomizable: true,
     featured: false
@@ -177,7 +177,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Teakwood Base & Plywood Storage Box",
     finish: "Vintage Cognac Leather & Brass Studs",
     dimensions: "48\" W x 26\" D x 18\" H",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=1200&auto=format&fit=crop",
     description: "Multi-functional coffee table bench with deep button-tufted top that opens smoothly via German gas struts to reveal cavernous storage for throws and cushions.",
     isCustomizable: true,
     featured: false
@@ -241,7 +241,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "100% Solid Seasoned Burma Teakwood",
     finish: "Hand-Polished Amber Lacquer & Gold Highlights",
     dimensions: "King Size (84\" W x 90\" L x 92\" Column Height)",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    image: "/canopy_poster_bed.jpg",
     description: "Regal 4-poster canopy bed with hand-turned fluted architectural pillars, acanthus leaf crown carvings, and reinforced cross-braced timber base designed for zero creak.",
     isCustomizable: true,
     featured: true
@@ -256,7 +256,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Teak Frame & High-Density Polyurethane",
     finish: "Cognac Tan Italian Leather & Matte Walnut Frame",
     dimensions: "King Size (78\" W x 86\" L x 54\" Headboard Height)",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    image: "/leather_master_bed.jpg",
     description: "Contemporary master bed featuring a grand 54-inch geometric quilted Italian leather headboard with integrated warm LED edge backlighting and floating teak plinth.",
     isCustomizable: true,
     featured: true
@@ -286,7 +286,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Single-Slab Seasoned Burma Teak",
     finish: "Antique Espresso & 24K Gold Leaf Inlay",
     dimensions: "82\" W x 64\" H x 3.5\" Deep Relief",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
     description: "Artisan-carved full-wall statement headboard with deep baroque floral medallions, upholstered velvet center panel, and flush wall mounting cleat hardware.",
     isCustomizable: true,
     featured: false
@@ -346,7 +346,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "100% Solid Burma Teakwood",
     finish: "Natural Wood Grain Satin & Antique Brass Pulls",
     dimensions: "36\" W x 20\" D x 52\" H",
-    image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=1200&auto=format&fit=crop",
     description: "Vertical tallboy chest handcrafted with traditional dovetail joinery, smooth ball-bearing undermount slides, and deep cedar-lined clothing compartments.",
     isCustomizable: true,
     featured: false
@@ -361,7 +361,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Rosewood & Italian Leather",
     finish: "Deep Royal Mahogany & Satin Varnish",
     dimensions: "King Size (80\" x 88\" x 90\" Column Height)",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop",
     description: "Architectural 4-poster royal bed frame with turned columns, carved crown header, tufted leather headboard, and pair of matching nightstands.",
     isCustomizable: true,
     featured: true
@@ -380,7 +380,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Natural Organic Live-Edge Single Slab Timber",
     finish: "Matte Polyurethane & Cast Brass Trapezoid Pedestals",
     dimensions: "96\" L x 42\" W x 30\" H (8-Seater)",
-    image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1200&auto=format&fit=crop",
+    image: "/live_edge_dining.jpg",
     description: "Magnificent 8-foot dining table preserving the natural undulating perimeter edge of seasoned timber, treated with stain-resistant nanocoat and dual cast brass pedestals.",
     isCustomizable: true,
     featured: true
@@ -425,7 +425,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Steam-Bent Burma Teak",
     finish: "Natural Matte Teak & Stain-Resistant Grey Velvet",
     dimensions: "22\" W x 22\" D x 33\" H (Set of 6 Chairs)",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop",
     description: "Curved ergonomic backrest dining chairs steam-bent from continuous solid teakwood with high-resilience foam seats wrapped in water-repellent luxury velvet.",
     isCustomizable: true,
     featured: false
@@ -440,7 +440,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Burma Teak & Fluted Tempered Glass",
     finish: "Espresso Brown & Warm Interior Showcase LED",
     dimensions: "72\" W x 19\" D x 34\" H",
-    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=1200&auto=format&fit=crop",
     description: "Sophisticated 4-door buffet sideboard featuring ribbed fluted glass display doors, cutlery organizer drawers with velvet lining, and integrated warm interior lighting.",
     isCustomizable: true,
     featured: true
@@ -455,7 +455,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Teak Base & Heavy Duty Swivel Plate",
     finish: "Saddle Tan Italian Leather & Antique Brass Ring",
     dimensions: "18\" W x 18\" D x 38\" H (Seat Height: 30\")",
-    image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1551298370-9d3d53740c72?q=80&w=1200&auto=format&fit=crop",
     description: "Counter-height luxury bar stools featuring smooth 360-degree rotation, supportive contoured bucket backrest in full-grain leather, and solid brass footrest ring.",
     isCustomizable: true,
     featured: false
@@ -519,10 +519,10 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Burma Teak Shelves & Steel Frame",
     finish: "Dark Walnut Stain & Matte Powder-Coated Metal",
     dimensions: "48\" W x 15\" D x 78\" H",
-    image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1200&auto=format&fit=crop",
+    image: "/geometric_bookshelf.jpg",
     description: "Open-plan asymmetric display shelving unit perfect for books, artifacts, and lighting, offering robust load-bearing solid teak tier shelves.",
     isCustomizable: true,
-    featured: false
+    featured: true
   },
   {
     id: "HO-SWG-04",
@@ -534,7 +534,7 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     woodType: "Solid Teak Armrests & Eco Rattan Cane Weave",
     finish: "Natural Amber Polish & Solid Brass Hanging Chains",
     dimensions: "44\" W x 30\" D x 50\" H (Carries up to 250 kg)",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1540518614846-7ede433c4ef7?q=80&w=1200&auto=format&fit=crop",
     description: "Hand-woven natural wicker rattan cocoon swing suspended by antiqued solid brass chains, fitted with water-resistant plush outdoor/indoor seat cushions.",
     isCustomizable: true,
     featured: true

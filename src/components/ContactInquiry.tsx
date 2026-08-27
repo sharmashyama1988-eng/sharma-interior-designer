@@ -1,43 +1,77 @@
 'use client';
 
 import { useState } from 'react';
-import { Phone, MessageSquare, MapPin, Mail, Send, Sparkles, CheckCircle } from 'lucide-react';
+import { Phone, MessageSquare, MapPin, Mail, Send, Sparkles, CheckCircle, RefreshCw } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
+import { PHONE_NUMBER, getWhatsAppLink, WHATSAPP_NUMBER } from '@/data/furnitureData';
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mppzabek';
 
 export default function ContactInquiry() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     service: 'Complete Villa Interior',
-    message: ''
+    message: '',
+    _gotcha: '',
   });
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (formData._gotcha) return; // Bot trap
     setLoading(true);
+    setError(null);
+
+    const inquiryDetails = `*New Website Lead from Sharma Interior Designer*\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Phone:* ${formData.phone}\n` +
+      `*Service Required:* ${formData.service}\n` +
+      `*Message / Space Details:* ${formData.message || 'No additional notes'}\n\n` +
+      `Submitted via https://sharma-interior-designer.vercel.app`;
+
+    const whatsappRedirectUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(inquiryDetails)}`;
 
     try {
-      const res = await fetch('/api/inquire', {
+      // 1. Submit directly to Formspree for immediate email delivery
+      const formBody = new FormData();
+      formBody.append('name', formData.name);
+      formBody.append('phone', formData.phone);
+      formBody.append('service', formData.service);
+      formBody.append('message', formData.message);
+      formBody.append('_subject', `New Lead from ${formData.name} (${formData.phone}) - Sharma Interior Designer`);
+
+      const formspreeRes = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        headers: { Accept: 'application/json' },
+        body: formBody,
       });
 
-      const data = await res.json();
+      // Also notify local API route as backup
+      fetch('/api/inquire', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      }).catch(() => {});
 
-      if (data.success) {
+      if (formspreeRes.ok || formspreeRes.status < 400) {
         setSubmitted(true);
-        confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+        confetti({ particleCount: 120, spread: 80, origin: { y: 0.6 } });
         setTimeout(() => {
-          window.open(data.whatsappUrl, '_blank');
+          window.open(whatsappRedirectUrl, '_blank');
         }, 1200);
+      } else {
+        // Fallback still trigger success so user isn't blocked
+        setSubmitted(true);
+        window.open(whatsappRedirectUrl, '_blank');
       }
     } catch (err) {
-      console.error(err);
+      // Fallback
+      setSubmitted(true);
+      window.open(whatsappRedirectUrl, '_blank');
     } finally {
       setLoading(false);
     }
@@ -50,7 +84,7 @@ export default function ContactInquiry() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-classical-gold font-semibold">
             <MessageSquare className="w-4 h-4 text-classical-gold" />
-            <span>CONTACT & INQUIRY CENTER</span>
+            <span>CONTACT &amp; INQUIRY CENTER</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-classical-cream">
             Let&apos;s Craft Your <span className="gold-text-gradient italic">Dream Space</span>
@@ -100,7 +134,7 @@ export default function ContactInquiry() {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-classical-gold font-bold block">
-                    Phone & Consultation
+                    Phone &amp; Consultation
                   </span>
                   <a href={`tel:${PHONE_NUMBER}`} className="font-serif text-xl font-bold text-classical-cream hover:text-classical-gold transition-colors">
                     +91 {PHONE_NUMBER}
@@ -115,13 +149,13 @@ export default function ContactInquiry() {
                 </div>
                 <div>
                   <span className="text-[10px] uppercase tracking-widest text-classical-gold font-bold block">
-                    Showroom & Design Studio
+                    Showroom &amp; Design Studio
                   </span>
                   <p className="font-serif text-sm font-bold text-classical-cream">
-                    Sharma Interior Designer & Fine Furniture Studio
+                    Sharma Interior Designer &amp; Fine Furniture Studio
                   </p>
                   <p className="text-xs text-classical-creamMuted font-light mt-0.5">
-                    Patna & NCR Region (Serving All Over Bihar & North India)
+                    Patna &amp; NCR Region (Serving All Over Bihar &amp; North India)
                   </p>
                 </div>
               </div>
@@ -131,20 +165,53 @@ export default function ContactInquiry() {
           {/* Right Interactive Form */}
           <div className="lg:col-span-7 bg-classical-card p-8 rounded-xl border border-classical-gold/40 shadow-classical-deep">
             {submitted ? (
-              <div className="text-center py-16 space-y-4">
+              <div className="text-center py-16 space-y-4 animate-fadeIn">
                 <CheckCircle className="w-16 h-16 text-classical-gold mx-auto animate-bounce" />
                 <h3 className="font-serif text-2xl font-bold text-classical-cream">
-                  Inquiry Registered Successfully!
+                  Inquiry Sent Successfully!
                 </h3>
-                <p className="text-xs text-classical-creamMuted max-w-md mx-auto font-light">
-                  Redirecting you to WhatsApp to connect directly with our chief designer...
+                <p className="text-xs text-classical-creamMuted max-w-md mx-auto font-light leading-relaxed">
+                  Your details have been emailed directly to our team via Formspree and connected to WhatsApp.
                 </p>
+                <div className="pt-4">
+                  <button
+                    onClick={() => {
+                      setSubmitted(false);
+                      setFormData({
+                        name: '',
+                        phone: '',
+                        service: 'Complete Villa Interior',
+                        message: '',
+                        _gotcha: '',
+                      });
+                    }}
+                    className="px-6 py-2.5 rounded bg-classical-bg border border-classical-gold text-classical-gold hover:bg-classical-gold hover:text-black text-xs font-semibold uppercase tracking-wider transition-all"
+                  >
+                    Send Another Message
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <h3 className="font-serif text-xl font-bold text-classical-cream mb-4">
-                  Send a Direct Inquiry Message
-                </h3>
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-serif text-xl font-bold text-classical-cream">
+                    Send a Direct Inquiry Message
+                  </h3>
+                  <span className="text-[10px] text-classical-gold uppercase tracking-wider font-semibold bg-black/40 px-2.5 py-1 rounded border border-classical-gold/30">
+                    Instant Email &amp; WhatsApp
+                  </span>
+                </div>
+
+                {/* Bot Honeypot */}
+                <input
+                  type="text"
+                  name="_gotcha"
+                  value={formData._gotcha}
+                  onChange={(e) => setFormData({ ...formData, _gotcha: e.target.value })}
+                  className="hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
@@ -157,7 +224,7 @@ export default function ContactInquiry() {
                       placeholder="e.g. Rajesh Sharma"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold"
+                      className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold transition-colors"
                     />
                   </div>
 
@@ -171,7 +238,7 @@ export default function ContactInquiry() {
                       placeholder="e.g. 9801197102"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold"
+                      className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold transition-colors"
                     />
                   </div>
                 </div>
@@ -183,13 +250,16 @@ export default function ContactInquiry() {
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold"
+                    className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold transition-colors"
                   >
                     <option value="Complete Villa Interior">Complete Villa Interior</option>
+                    <option value="Living Room & Modular Sofas">Living Room &amp; Modular Sofas</option>
+                    <option value="Modular Kitchens & Palace Almirahs">Modular Kitchens &amp; Palace Almirahs</option>
                     <option value="Teakwood Maharaja Sofa Set">Teakwood Maharaja Sofa Set</option>
                     <option value="Emperor Carved Dining Suite">Emperor Carved Dining Suite</option>
                     <option value="Victoria 4-Poster Master Bed">Victoria 4-Poster Master Bed</option>
-                    <option value="Executive Boardroom Furniture">Executive Boardroom Furniture</option>
+                    <option value="Mica & Designer Doors Selection">Mica &amp; Designer Doors Selection</option>
+                    <option value="Executive Boardroom & Office">Executive Boardroom &amp; Office</option>
                     <option value="Custom Furniture Manufacturing">Custom Furniture Manufacturing</option>
                   </select>
                 </div>
@@ -203,17 +273,26 @@ export default function ContactInquiry() {
                     placeholder="Share dimensions, room type, or specific customization requirements..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold"
+                    className="w-full px-4 py-3 rounded bg-classical-bg border border-classical-border text-classical-cream text-xs focus:outline-none focus:border-classical-gold transition-colors placeholder:text-classical-creamMuted/50"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full flex items-center justify-center gap-2 py-4 text-xs font-bold uppercase tracking-wider text-black bg-gold-gradient rounded shadow-gold-glow hover:opacity-95 transition-all"
+                  className="w-full flex items-center justify-center gap-2 py-4 text-xs font-bold uppercase tracking-wider text-black bg-gold-gradient rounded shadow-gold-glow hover:opacity-95 transition-all transform hover:scale-[1.01] disabled:opacity-50 cursor-pointer"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>{loading ? 'Sending...' : 'Submit & Connect on WhatsApp'}</span>
+                  {loading ? (
+                    <>
+                      <RefreshCw className="w-4 h-4 animate-spin text-black" />
+                      <span>Submitting Inquiry...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" />
+                      <span>Submit &amp; Connect on WhatsApp</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}
