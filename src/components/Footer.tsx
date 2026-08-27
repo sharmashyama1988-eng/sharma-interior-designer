@@ -48,13 +48,14 @@ export default function Footer() {
               Quick Navigation
             </h4>
             <ul className="space-y-2.5 text-xs text-classical-creamMuted">
-              <li><a href="#architect" className="hover:text-classical-gold transition-colors text-classical-gold font-medium">Principal Architect</a></li>
-              <li><a href="#catalog" className="hover:text-classical-gold transition-colors">Furniture Catalog</a></li>
-              <li><a href="#kitchen-almirah" className="hover:text-classical-gold transition-colors">Kitchen & Almirahs</a></li>
-              <li><a href="#customizer" className="hover:text-classical-gold transition-colors">3D Customizer</a></li>
-              <li><a href="#services" className="hover:text-classical-gold transition-colors">Interior Services</a></li>
-              <li><a href="#portfolio" className="hover:text-classical-gold transition-colors">Project Portfolio</a></li>
-              <li><a href="#estimator" className="hover:text-classical-gold transition-colors">Budget Calculator</a></li>
+              <li><a href="/#architect" className="hover:text-classical-gold transition-colors text-classical-gold font-medium">Principal Architect</a></li>
+              <li><a href="/catloug" className="hover:text-classical-gold transition-colors">Digital Catalog (/catloug)</a></li>
+              <li><a href="/catloug#kitchen-almirah" className="hover:text-classical-gold transition-colors">Kitchen &amp; Almirahs</a></li>
+              <li><a href="/catloug#mica-selector" className="hover:text-classical-gold transition-colors">Mica &amp; Doors</a></li>
+              <li><a href="/catloug#customizer" className="hover:text-classical-gold transition-colors">3D Customizer</a></li>
+              <li><a href="/#services" className="hover:text-classical-gold transition-colors">Interior Services</a></li>
+              <li><a href="/#portfolio" className="hover:text-classical-gold transition-colors">Project Portfolio</a></li>
+              <li><a href="/#estimator" className="hover:text-classical-gold transition-colors">Budget Calculator</a></li>
             </ul>
           </div>
 
@@ -64,11 +65,11 @@ export default function Footer() {
               Furniture Collections
             </h4>
             <ul className="space-y-2.5 text-xs text-classical-creamMuted">
-              <li><a href="#catalog" className="hover:text-classical-gold transition-colors">Maharaja Sofa Sets</a></li>
-              <li><a href="#catalog" className="hover:text-classical-gold transition-colors">Emperor Dining Suites</a></li>
-              <li><a href="#catalog" className="hover:text-classical-gold transition-colors">Victoria 4-Poster Beds</a></li>
-              <li><a href="#catalog" className="hover:text-classical-gold transition-colors">Executive Writing Desks</a></li>
-              <li><a href="#catalog" className="hover:text-classical-gold transition-colors">Hand-Carved Accents</a></li>
+              <li><a href="/catloug#catalog" className="hover:text-classical-gold transition-colors">Maharaja Sofa Sets</a></li>
+              <li><a href="/catloug#catalog" className="hover:text-classical-gold transition-colors">Emperor Dining Suites</a></li>
+              <li><a href="/catloug#catalog" className="hover:text-classical-gold transition-colors">Victoria 4-Poster Beds</a></li>
+              <li><a href="/catloug#catalog" className="hover:text-classical-gold transition-colors">Executive Writing Desks</a></li>
+              <li><a href="/catloug#catalog" className="hover:text-classical-gold transition-colors">Hand-Carved Accents</a></li>
             </ul>
           </div>
 

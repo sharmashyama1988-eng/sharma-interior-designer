@@ -12,6 +12,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/catloug`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/catalog`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/booking`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
@@ -19,4 +31,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
-

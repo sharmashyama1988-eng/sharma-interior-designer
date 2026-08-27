@@ -2,10 +2,7 @@ import HeroSection from '@/components/HeroSection';
 import HeritageAbout from '@/components/HeritageAbout';
 import ArchitectBio from '@/components/ArchitectBio';
 import ServicesSection from '@/components/ServicesSection';
-import FurnitureCatalog from '@/components/FurnitureCatalog';
-import ModularKitchenAlmirah from '@/components/ModularKitchenAlmirah';
-import MicaDesignSelector from '@/components/MicaDesignSelector';
-import InteractiveCustomizer from '@/components/InteractiveCustomizer';
+import CatalogTeaser from '@/components/CatalogTeaser';
 import MaterialCraftsmanship from '@/components/MaterialCraftsmanship';
 import CostEstimator from '@/components/CostEstimator';
 import ProjectPortfolio from '@/components/ProjectPortfolio';
@@ -26,10 +23,7 @@ export default function Home() {
       <HeritageAbout />
       <ArchitectBio />
       <ServicesSection />
-      <FurnitureCatalog />
-      <ModularKitchenAlmirah />
-      <MicaDesignSelector />
-      <InteractiveCustomizer />
+      <CatalogTeaser />
       <MaterialCraftsmanship />
       <CostEstimator />
       <ProjectPortfolio />

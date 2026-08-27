@@ -106,10 +106,10 @@ export default function HeroSection() {
 
             {/* Explore Catalog Link */}
             <a
-              href="#catalog"
-              className="inline-flex items-center gap-2 text-sm text-classical-gold hover:text-white transition-colors underline underline-offset-8 decoration-classical-gold/50 hover:decoration-classical-gold px-2"
+              href="/catloug"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-classical-gold hover:text-white transition-colors underline underline-offset-8 decoration-classical-gold/50 hover:decoration-classical-gold px-2"
             >
-              <span>Explore Designs</span>
+              <span>Explore Full Catalog</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

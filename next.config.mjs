@@ -13,6 +13,26 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/catalog',
+        destination: '/catloug',
+      },
+      {
+        source: '/catloge',
+        destination: '/catloug',
+      },
+      {
+        source: '/catalogue',
+        destination: '/catloug',
+      },
+      {
+        source: '/collections',
+        destination: '/catloug',
+      },
+    ];
+  },
   async headers() {
     return [
       {
