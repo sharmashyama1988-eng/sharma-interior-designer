@@ -5,7 +5,7 @@ import { Phone, MessageSquare, MapPin, Mail, Send, Sparkles, CheckCircle, Refres
 import confetti from 'canvas-confetti';
 import { PHONE_NUMBER, getWhatsAppLink, WHATSAPP_NUMBER } from '@/data/furnitureData';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mppzabek';
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mppzabek';
 
 export default function ContactInquiry() {
   const [formData, setFormData] = useState({

@@ -1,7 +1,7 @@
-import { NextResponse } from 'next';
+import { NextResponse } from 'next/server';
 import { WHATSAPP_NUMBER } from '@/data/furnitureData';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mppzabek';
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || process.env.FORMSPREE_ENDPOINT || 'https://formspree.io/f/mppzabek';
 
 export async function POST(request: Request) {
   try {

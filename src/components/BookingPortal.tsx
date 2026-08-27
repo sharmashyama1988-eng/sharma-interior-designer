@@ -21,7 +21,7 @@ interface FormDataState {
 }
 
 export default function BookingPortal({ onBack, isStandalone = false }: BookingPortalProps) {
-  const FORM_ENDPOINT = 'https://formspree.io/f/mppzabek';
+  const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || 'https://formspree.io/f/mppzabek';
 
   const [formData, setFormData] = useState<FormDataState>({
     name: '',
