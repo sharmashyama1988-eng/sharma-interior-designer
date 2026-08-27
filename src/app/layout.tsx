@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://sharma-interior-designer.vercel.app'),
+  metadataBase: new URL('https://sharma-interior-designer.vercel.app/'),
   title: {
     default: 'Sharma Interior Designers | Lead Architect Satya Narayan Sharma',
     template: '%s | Sharma Interior Designers',
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://sharma-interior-designer.vercel.app',
+    canonical: 'https://sharma-interior-designer.vercel.app/',
   },
   other: {
     'apple-mobile-web-app-title': 'Sharma Interior Designers',
