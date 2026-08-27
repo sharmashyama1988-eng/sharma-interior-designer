@@ -56,23 +56,508 @@ export const getWhatsAppLink = (message?: string) => {
 
 export const CATALOG_CATEGORIES = [
   { id: 'all', label: 'All Collections' },
+  { id: 'living', label: 'Living Room' },
+  { id: 'bedroom', label: 'Bedroom Suites' },
+  { id: 'dining', label: 'Dining & Bar' },
+  { id: 'study', label: 'Home Office & Utility' },
   { id: 'kitchen', label: 'Modular Kitchens' },
   { id: 'almirah', label: 'Almirah & Wardrobes' },
   { id: 'doors', label: 'Teak & Royal Doors' },
+  { id: 'accents', label: 'Accents & Swings' },
+  { id: 'tv_panel', label: 'LED TV Panel Units' },
+  { id: 'wall_panelling', label: 'Wall Panelling' },
   { id: 'office', label: 'Office Furniture' },
   { id: 'master_office', label: 'Master Office & Chairman' },
-  { id: 'wall_panelling', label: 'Wall Panelling' },
-  { id: 'tv_panel', label: 'LED TV Panel Units' },
   { id: 'showroom', label: 'Showroom Interiors' },
   { id: 'luxury_office', label: 'Luxury Office Chambers' },
   { id: 'shop_almirah', label: 'Shop Furniture Almirah' },
-  { id: 'living', label: 'Living Room' },
-  { id: 'dining', label: 'Dining Suites' },
-  { id: 'bedroom', label: 'Bedroom Suites' },
 ];
 
 export const FURNITURE_CATALOG: FurnitureItem[] = [
-  // 1. Modular Kitchens
+  // ==========================================
+  // 1. LIVING ROOM FURNITURE (2026 LUXURY TRENDS)
+  // ==========================================
+  {
+    id: "LR-MOD-01",
+    name: "Aura Modular Sectional Sofa in Ivory Bouclé",
+    category: "living",
+    price: 185000,
+    originalPrice: 210000,
+    rating: 5.0,
+    woodType: "Solid Burma Teak Internal Frame",
+    finish: "Textured Cream Bouclé & Brushed Brass Plinth",
+    dimensions: "128\" W x 68\" D x 32\" H (5-Piece Configurable)",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
+    description: "Ultra-luxurious 5-module sectional sofa upholstered in premium anti-stain ivory bouclé fabric, built upon a kiln-seasoned Burma teak hardwood chassis with magnetic locking fasteners.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "LR-CRV-02",
+    name: "Serpentine Curved Luxury Sofa in Royal Emerald Velvet",
+    category: "living",
+    price: 215000,
+    originalPrice: 245000,
+    rating: 4.9,
+    woodType: "Curved Steam-Bent Teak & Birch",
+    finish: "Deep Emerald Velvet & Brushed Brass Shadow Base",
+    dimensions: "102\" W x 42\" D x 33\" H",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    description: "Flowing biomorphic curved silhouette sofa featuring multi-density ergonomic foam, hand-stitched velvet upholstery, and a floating gold brass shadow line plinth.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "LR-CLD-03",
+    name: "Olympus Deep Cloud Low-Profile Lounge Sofa (4-Seater)",
+    category: "living",
+    price: 195000,
+    originalPrice: 225000,
+    rating: 5.0,
+    woodType: "Solid Hardwood Frame & Sinuous Springs",
+    finish: "Italian Washed Linen & Feather-Down Blend",
+    dimensions: "114\" W x 44\" D x 28\" H",
+    image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=1200&auto=format&fit=crop",
+    description: "Sink-in cloud seating experience featuring dual-layer goose feather cushioning, ultra-deep 44-inch lounge seats, removable covers, and solid teak hidden feet.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "LR-ACC-04",
+    name: "Monarch Velvet Fluted Statement Accent Chair",
+    category: "living",
+    price: 48000,
+    originalPrice: 55000,
+    rating: 4.9,
+    woodType: "Solid Burma Teak Legs with Brass Ferrules",
+    finish: "Channel-Tufted Golden Amber Velvet",
+    dimensions: "34\" W x 32\" D x 36\" H",
+    image: "https://images.unsplash.com/photo-1580481072645-022f9a6d8310?q=80&w=1200&auto=format&fit=crop",
+    description: "Showstopping statement armchair with vertical channel fluting, barrel curved backrest, plush 40-density foam seat, and solid teak tapered legs capped in gold brass.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "LR-CFT-05",
+    name: "Burma Teak Natural Live-Edge Slab Center Coffee Table",
+    category: "living",
+    price: 62000,
+    originalPrice: 72000,
+    rating: 5.0,
+    woodType: "100% Solid Natural Live-Edge Burma Teak Slab",
+    finish: "Matte Polyurethane Clear Coat & Matte Black Metal Legs",
+    dimensions: "54\" L x 30\" W x 18\" H (4-Inch Slab)",
+    image: "https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=1200&auto=format&fit=crop",
+    description: "Preserved natural tree perimeter organic live-edge teak slab with resin butterfly joints, smooth satin polish, and architectural spider-leg steel support.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "LR-TVU-06",
+    name: "Aethelgard Ribbed Fluted Teak & Brass Floating TV Unit",
+    category: "living",
+    price: 85000,
+    originalPrice: 98000,
+    rating: 4.9,
+    woodType: "Solid Burma Teak & HDHMR Core",
+    finish: "CNC Fluted Slats & Brushed Brass Lip Trim",
+    dimensions: "96\" W x 18\" D x 20\" H (Wall Mounted)",
+    image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=1200&auto=format&fit=crop",
+    description: "Modern minimalist wall-mounted TV credenza with continuous 3D fluted vertical timber slats, soft-close acoustic drop-down doors, and hidden cable channels.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "LR-OTM-07",
+    name: "Chesterfield Deep-Tufted Storage Ottoman & Coffee Bench",
+    category: "living",
+    price: 38000,
+    originalPrice: 45000,
+    rating: 4.8,
+    woodType: "Teakwood Base & Plywood Storage Box",
+    finish: "Vintage Cognac Leather & Brass Studs",
+    dimensions: "48\" W x 26\" D x 18\" H",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    description: "Multi-functional coffee table bench with deep button-tufted top that opens smoothly via German gas struts to reveal cavernous storage for throws and cushions.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "LR-CNS-08",
+    name: "Sleek Teakwood & Champagne Brass Inlay Entryway Console",
+    category: "living",
+    price: 42000,
+    originalPrice: 50000,
+    rating: 4.9,
+    woodType: "Grade-A Burma Teak",
+    finish: "Smoked Walnut Stain & Solid Brass T-Profile Inlays",
+    dimensions: "56\" W x 14\" D x 32\" H",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
+    description: "Architectural slim console table designed for luxury foyers and behind-sofa placement, featuring waterfall mitered corners and brushed gold inlay bands.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "LR-RCL-09",
+    name: "Grand Regent Motorized Italian Full-Grain Leather Recliner",
+    category: "living",
+    price: 88000,
+    originalPrice: 105000,
+    rating: 5.0,
+    woodType: "Reinforced Teak & Heavy Gauge Steel Mechanism",
+    finish: "Italian Nappa Leather & Dual Motor Control",
+    dimensions: "38\" W x 36\" D x 42\" H (Reclines to 68\")",
+    image: "https://images.unsplash.com/photo-1580481072645-022f9a6d8310?q=80&w=1200&auto=format&fit=crop",
+    description: "Whisper-quiet dual-motor power recliner with independent back and footrest controls, integrated USB fast-charging port, and breathable perforated full-grain leather.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "f1",
+    name: "The Royal Teakwood Maharaja Sofa Set (3+2+1)",
+    category: "living",
+    price: 265000,
+    originalPrice: 295000,
+    rating: 4.9,
+    woodType: "Grade-A Seasoned Burma Teak",
+    finish: "24K Gold Leaf Gilt & Dark Walnut",
+    dimensions: "88\" W x 38\" D x 44\" H (3-Seater) + 2 Armchairs",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
+    description: "Masterpiece hand-carved sofa suite sculpted from solid Burma teakwood, upholstered in plush royal crimson velvet with brass nailhead trim.",
+    isCustomizable: true,
+    featured: true
+  },
+
+  // ==========================================
+  // 2. BEDROOM FURNITURE (2026 LUXURY SUITES)
+  // ==========================================
+  {
+    id: "BD-CNP-01",
+    name: "Royal Heritage Burma Teak 4-Poster Canopy King Bed",
+    category: "bedroom",
+    price: 235000,
+    originalPrice: 265000,
+    rating: 5.0,
+    woodType: "100% Solid Seasoned Burma Teakwood",
+    finish: "Hand-Polished Amber Lacquer & Gold Highlights",
+    dimensions: "King Size (84\" W x 90\" L x 92\" Column Height)",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    description: "Regal 4-poster canopy bed with hand-turned fluted architectural pillars, acanthus leaf crown carvings, and reinforced cross-braced timber base designed for zero creak.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "BD-UPH-02",
+    name: "Kingston Italian Leather Padded Upholstered Master Bed",
+    category: "bedroom",
+    price: 165000,
+    originalPrice: 190000,
+    rating: 4.9,
+    woodType: "Solid Teak Frame & High-Density Polyurethane",
+    finish: "Cognac Tan Italian Leather & Matte Walnut Frame",
+    dimensions: "King Size (78\" W x 86\" L x 54\" Headboard Height)",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    description: "Contemporary master bed featuring a grand 54-inch geometric quilted Italian leather headboard with integrated warm LED edge backlighting and floating teak plinth.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "BD-STR-03",
+    name: "Zenith Hydraulic Lift Solid Wood King Storage Bed",
+    category: "bedroom",
+    price: 145000,
+    originalPrice: 170000,
+    rating: 5.0,
+    woodType: "Seasoned Teakwood & Marine Plywood Base",
+    finish: "Satin Polyurethane Polish & Velvet Headboard",
+    dimensions: "King Size (76\" W x 84\" L x 48\" Headboard Height)",
+    image: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?q=80&w=1200&auto=format&fit=crop",
+    description: "Effortless one-touch hydraulic lift storage bed utilizing heavy-duty German gas pistons, giving access to 1,200 liters of dust-sealed storage space under the mattress.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "BD-HBD-04",
+    name: "Imperial Hand-Carved Teakwood Statement Wall Headboard",
+    category: "bedroom",
+    price: 78000,
+    originalPrice: 92000,
+    rating: 4.9,
+    woodType: "Single-Slab Seasoned Burma Teak",
+    finish: "Antique Espresso & 24K Gold Leaf Inlay",
+    dimensions: "82\" W x 64\" H x 3.5\" Deep Relief",
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
+    description: "Artisan-carved full-wall statement headboard with deep baroque floral medallions, upholstered velvet center panel, and flush wall mounting cleat hardware.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "BD-NST-05",
+    name: "Aura Smart Nightstand with Wireless Charging & Touch LED",
+    category: "bedroom",
+    price: 28000,
+    originalPrice: 34000,
+    rating: 4.8,
+    woodType: "Grade-A Burma Teak & Sintered Stone Top",
+    finish: "Dark Walnut & Soft-Close Blum Runners",
+    dimensions: "22\" W x 18\" D x 22\" H (2-Drawer Set)",
+    image: "https://images.unsplash.com/photo-1540518614846-7ede433c4ef7?q=80&w=1200&auto=format&fit=crop",
+    description: "Modern smart bedside table featuring top-embedded Qi wireless phone charging, touch sensor LED floor pathway light, and velvet-lined jewelry drawers.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "BD-VNT-06",
+    name: "Elegance Vanity Dressing Table with Halo LED Touch Mirror",
+    category: "bedroom",
+    price: 68000,
+    originalPrice: 80000,
+    rating: 4.9,
+    woodType: "Burma Teakwood & Toughened Glass",
+    finish: "Champagne Gold PU & Brushed Brass Accents",
+    dimensions: "48\" W x 20\" D x 58\" Total Height",
+    image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1200&auto=format&fit=crop",
+    description: "Luxury grooming vanity console complete with 3-color dimmable circular halo LED touch mirror, glass top jewelry display section, and matching cushioned stool.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "BD-WDR-07",
+    name: "Palazzo 4-Door Matte Super-Lacquer & Teak Wardrobe",
+    category: "bedroom",
+    price: 185000,
+    originalPrice: 215000,
+    rating: 5.0,
+    woodType: "HDHMR Marine Core & Burma Teak Framework",
+    finish: "Anti-Fingerprint Cashmere Grey Matte & Long Teak Handles",
+    dimensions: "80\" W x 24\" D x 96\" H (Floor to Ceiling)",
+    image: "/almirah3.jpg",
+    description: "Contemporary 4-door wardrobe with anti-fingerprint nanotech super-matte shutters, full-length solid teak fluted edge pull handles, and integrated warm LED interior sensor lights.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "BD-DRW-08",
+    name: "Artisan 6-Drawer Solid Teakwood Tallboy Chest",
+    category: "bedroom",
+    price: 58000,
+    originalPrice: 68000,
+    rating: 4.9,
+    woodType: "100% Solid Burma Teakwood",
+    finish: "Natural Wood Grain Satin & Antique Brass Pulls",
+    dimensions: "36\" W x 20\" D x 52\" H",
+    image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=1200&auto=format&fit=crop",
+    description: "Vertical tallboy chest handcrafted with traditional dovetail joinery, smooth ball-bearing undermount slides, and deep cedar-lined clothing compartments.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "f3",
+    name: "Victoria Four-Poster Master Bed Suite",
+    category: "bedroom",
+    price: 245000,
+    originalPrice: 280000,
+    rating: 4.9,
+    woodType: "Solid Rosewood & Italian Leather",
+    finish: "Deep Royal Mahogany & Satin Varnish",
+    dimensions: "King Size (80\" x 88\" x 90\" Column Height)",
+    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    description: "Architectural 4-poster royal bed frame with turned columns, carved crown header, tufted leather headboard, and pair of matching nightstands.",
+    isCustomizable: true,
+    featured: true
+  },
+
+  // ==========================================
+  // 3. DINING & KITCHEN FURNITURE (2026 TRENDS)
+  // ==========================================
+  {
+    id: "DN-LVE-01",
+    name: "Solid Suar & Burma Teak 8-Seater Live-Edge Dining Table",
+    category: "dining",
+    price: 195000,
+    originalPrice: 225000,
+    rating: 5.0,
+    woodType: "Natural Organic Live-Edge Single Slab Timber",
+    finish: "Matte Polyurethane & Cast Brass Trapezoid Pedestals",
+    dimensions: "96\" L x 42\" W x 30\" H (8-Seater)",
+    image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1200&auto=format&fit=crop",
+    description: "Magnificent 8-foot dining table preserving the natural undulating perimeter edge of seasoned timber, treated with stain-resistant nanocoat and dual cast brass pedestals.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "DN-EXT-02",
+    name: "Transforma Teak Butterfly Extendable Dining Suite (6-10 Seater)",
+    category: "dining",
+    price: 165000,
+    originalPrice: 190000,
+    rating: 4.9,
+    woodType: "Solid Burma Teakwood Mechanism",
+    finish: "Warm Honey Walnut Lacquer",
+    dimensions: "72\" to 104\" L x 40\" W x 30\" H (Includes 6 Chairs)",
+    image: "https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?q=80&w=1200&auto=format&fit=crop",
+    description: "Space-saving architectural butterfly extension table that expands from 6-seater (72 inches) to 10-seater (104 inches) in seconds via smooth internal cog mechanisms.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "DN-SNT-03",
+    name: "Statuario Sintered Stone & Champagne Gold Dining Table",
+    category: "dining",
+    price: 175000,
+    originalPrice: 205000,
+    rating: 5.0,
+    woodType: "12mm Italian Sintered Stone & Teak Core",
+    finish: "Polished Statuario White & Brushed Gold Metal Base",
+    dimensions: "84\" L x 40\" W x 30\" H (8-Seater)",
+    image: "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=1200&auto=format&fit=crop",
+    description: "100% heat-proof, scratch-proof, and non-porous 12mm sintered stone tabletop with bookmatched grey veining, supported by a geometric sculpted champagne brass base.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "DN-CHR-04",
+    name: "Nordic Teak & Velvet Curved Dining Chairs (Set of 6)",
+    category: "dining",
+    price: 72000,
+    originalPrice: 84000,
+    rating: 4.8,
+    woodType: "Solid Steam-Bent Burma Teak",
+    finish: "Natural Matte Teak & Stain-Resistant Grey Velvet",
+    dimensions: "22\" W x 22\" D x 33\" H (Set of 6 Chairs)",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    description: "Curved ergonomic backrest dining chairs steam-bent from continuous solid teakwood with high-resilience foam seats wrapped in water-repellent luxury velvet.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "DN-BUF-05",
+    name: "Carved Teakwood & Fluted Glass Buffet Sideboard Credenza",
+    category: "dining",
+    price: 95000,
+    originalPrice: 112000,
+    rating: 4.9,
+    woodType: "Solid Burma Teak & Fluted Tempered Glass",
+    finish: "Espresso Brown & Warm Interior Showcase LED",
+    dimensions: "72\" W x 19\" D x 34\" H",
+    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?q=80&w=1200&auto=format&fit=crop",
+    description: "Sophisticated 4-door buffet sideboard featuring ribbed fluted glass display doors, cutlery organizer drawers with velvet lining, and integrated warm interior lighting.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "DN-BAR-06",
+    name: "High-Life 360° Swivel Luxury Bar Stools (Pair)",
+    category: "dining",
+    price: 36000,
+    originalPrice: 42000,
+    rating: 4.9,
+    woodType: "Solid Teak Base & Heavy Duty Swivel Plate",
+    finish: "Saddle Tan Italian Leather & Antique Brass Ring",
+    dimensions: "18\" W x 18\" D x 38\" H (Seat Height: 30\")",
+    image: "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop",
+    description: "Counter-height luxury bar stools featuring smooth 360-degree rotation, supportive contoured bucket backrest in full-grain leather, and solid brass footrest ring.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "f2",
+    name: "Emperor Hand-Carved Dining Suite (8-Seater + Marble Top)",
+    category: "dining",
+    price: 325000,
+    originalPrice: 360000,
+    rating: 5.0,
+    woodType: "Solid Burma Teakwood & Italian Marble",
+    finish: "Antique Amber Polish & Gold Trim",
+    dimensions: "108\" L x 48\" W x 30\" H",
+    image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1200&auto=format&fit=crop",
+    description: "Grand classical dining table featuring hand-engraved twin pedestal legs, accompanied by 8 opulent high-back carved dining chairs.",
+    isCustomizable: true,
+    featured: true
+  },
+
+  // ==========================================
+  // 4. HOME OFFICE & UTILITY (2026 TRENDS)
+  // ==========================================
+  {
+    id: "HO-FLT-01",
+    name: "Aero Minimalist Floating Teak Wall-Mounted Study Desk",
+    category: "study",
+    price: 32000,
+    originalPrice: 38000,
+    rating: 4.9,
+    woodType: "Grade-A Burma Teak & HDHMR Core",
+    finish: "Natural Teak Satin Polyurethane",
+    dimensions: "48\" W x 20\" D x 10\" H",
+    image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=1200&auto=format&fit=crop",
+    description: "Clean floating study desk anchored securely to walls with reinforced steel brackets, featuring 2 concealed soft-close drawers and integrated wire raceway.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "HO-CHR-02",
+    name: "Presidential High-Back Full-Grain Leather Task Chair",
+    category: "study",
+    price: 46000,
+    originalPrice: 55000,
+    rating: 5.0,
+    woodType: "Teakwood Shell & Polished Aluminum 5-Star Base",
+    finish: "Onyx Black Italian Leather & Class-4 Gas Lift",
+    dimensions: "26\" W x 26\" D x 48\" H",
+    image: "https://images.unsplash.com/photo-1580481072645-022f9a6d8310?q=80&w=1200&auto=format&fit=crop",
+    description: "Ergonomic executive chair combining mid-century molded teak veneer outer shell with adjustable lumbar support, 3D armrests, and synchro-tilt mechanism.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "HO-BKS-03",
+    name: "Geometric Teakwood & Matte Black Architectural Bookshelf",
+    category: "study",
+    price: 64000,
+    originalPrice: 75000,
+    rating: 4.9,
+    woodType: "Solid Burma Teak Shelves & Steel Frame",
+    finish: "Dark Walnut Stain & Matte Powder-Coated Metal",
+    dimensions: "48\" W x 15\" D x 78\" H",
+    image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1200&auto=format&fit=crop",
+    description: "Open-plan asymmetric display shelving unit perfect for books, artifacts, and lighting, offering robust load-bearing solid teak tier shelves.",
+    isCustomizable: true,
+    featured: false
+  },
+  {
+    id: "HO-SWG-04",
+    name: "Boho Luxury Natural Rattan & Teak Hanging Swing Jhula",
+    category: "accents",
+    price: 52000,
+    originalPrice: 62000,
+    rating: 5.0,
+    woodType: "Solid Teak Armrests & Eco Rattan Cane Weave",
+    finish: "Natural Amber Polish & Solid Brass Hanging Chains",
+    dimensions: "44\" W x 30\" D x 50\" H (Carries up to 250 kg)",
+    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1200&auto=format&fit=crop",
+    description: "Hand-woven natural wicker rattan cocoon swing suspended by antiqued solid brass chains, fitted with water-resistant plush outdoor/indoor seat cushions.",
+    isCustomizable: true,
+    featured: true
+  },
+  {
+    id: "HO-SFB-05",
+    name: "Convertible Teak Frame Velvet Pullout Sofa-Cum-Bed",
+    category: "accents",
+    price: 78000,
+    originalPrice: 92000,
+    rating: 4.9,
+    woodType: "Heavy-Duty Seasoned Teak Framework",
+    finish: "Navy Blue Velvet & German Easy-Glide Roller System",
+    dimensions: "78\" W x 38\" D x 34\" H (Converts to 60\"x75\" Queen Bed)",
+    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
+    description: "Dual-utility space transformer that smoothly slides from a 3-seater sofa into a supportive Queen-sized mattress bed in under 5 seconds with zero strain.",
+    isCustomizable: true,
+    featured: true
+  },
+
+  // ==========================================
+  // 5. MODULAR KITCHENS
+  // ==========================================
   {
     id: "MK-ISL-01",
     name: "Royal Imperial Burma Teak Island Modular Kitchen",
@@ -134,7 +619,9 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: true
   },
 
-  // 2. Almirah & Wardrobe Systems
+  // ==========================================
+  // 6. ALMIRAH & WARDROBES
+  // ==========================================
   {
     id: "AW-6DR-01",
     name: "Palace 6-Door Carved Burma Teak Heritage Almirah",
@@ -211,7 +698,9 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: false
   },
 
-  // 3. Teak & Royal Doors
+  // ==========================================
+  // 7. TEAK & ROYAL DOORS
+  // ==========================================
   {
     id: "DR-TRK-01",
     name: "Imperial Hand-Carved Burma Teak Royal Entrance Double Door",
@@ -243,7 +732,9 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: false
   },
 
-  // 4. Office Furniture
+  // ==========================================
+  // 8. OFFICE & EXECUTIVE FURNITURE
+  // ==========================================
   {
     id: "OF-DSK-01",
     name: "Sovereign Burma Teak Executive Desk & Credenza Set",
@@ -274,8 +765,6 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
-
-  // 5. Master Office & Chairman Chambers
   {
     id: "MO-CHR-01",
     name: "Imperial Chairman Royal Teak Pedestal Desk & Carved Crest",
@@ -307,7 +796,9 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: false
   },
 
-  // 6. Wall Panelling
+  // ==========================================
+  // 9. WALL PANELLING & TV CONSOLES
+  // ==========================================
   {
     id: "WP-WNS-01",
     name: "Versailles Teakwood Wainscoting & Fluted Dado Rail Panelling",
@@ -338,8 +829,6 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
-
-  // 7. Wall Mount LED TV Panel Units
   {
     id: "TV-MRB-01",
     name: "Celestial Floating Italian Statuario Marble & Teak TV Console",
@@ -371,7 +860,9 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     featured: false
   },
 
-  // 8. Commercial Showroom Interiors
+  // ==========================================
+  // 10. SHOWROOM & RETAIL
+  // ==========================================
   {
     id: "CS-RCK-01",
     name: "Pavilion Luxury Retail Display Rack System & Brass Frame",
@@ -402,8 +893,6 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
-
-  // 9. Luxury Executive Office Suites
   {
     id: "LO-SUT-01",
     name: "Presidential Full Turnkey Executive Chamber Suite",
@@ -419,8 +908,6 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     isCustomizable: true,
     featured: true
   },
-
-  // 10. Shop Furniture & Retail Display Almirahs
   {
     id: "SF-SHW-01",
     name: "Heritage Jeweller Glass Showcase Display Almirah",
@@ -433,53 +920,6 @@ export const FURNITURE_CATALOG: FurnitureItem[] = [
     dimensions: "72\" W x 22\" D x 84\" H Glass Display Unit",
     image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?q=80&w=1200&auto=format&fit=crop",
     description: "High-security jewelry display almirah with anti-shatter glass, vertical micro-LED spot channels, velvet ring/watch trays, and reinforced overnight vault storage.",
-    isCustomizable: true,
-    featured: true
-  },
-
-  // Classical Living, Dining & Bedroom Suites
-  {
-    id: "f1",
-    name: "The Royal Teakwood Maharaja Sofa Set (3+2+1)",
-    category: "living",
-    price: 265000,
-    originalPrice: 295000,
-    rating: 4.9,
-    woodType: "Grade-A Seasoned Burma Teak",
-    finish: "24K Gold Leaf Gilt & Dark Walnut",
-    dimensions: "88\" W x 38\" D x 44\" H (3-Seater) + 2 Armchairs",
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop",
-    description: "Masterpiece hand-carved sofa suite sculpted from solid Burma teakwood, upholstered in plush royal crimson velvet with brass nailhead trim.",
-    isCustomizable: true,
-    featured: true
-  },
-  {
-    id: "f2",
-    name: "Emperor Hand-Carved Dining Suite (8-Seater + Marble Top)",
-    category: "dining",
-    price: 325000,
-    originalPrice: 360000,
-    rating: 5.0,
-    woodType: "Solid Burma Teakwood & Italian Marble",
-    finish: "Antique Amber Polish & Gold Trim",
-    dimensions: "108\" L x 48\" W x 30\" H",
-    image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1200&auto=format&fit=crop",
-    description: "Grand classical dining table featuring hand-engraved twin pedestal legs, accompanied by 8 opulent high-back carved dining chairs.",
-    isCustomizable: true,
-    featured: true
-  },
-  {
-    id: "f3",
-    name: "Victoria Four-Poster Master Bed Suite",
-    category: "bedroom",
-    price: 245000,
-    originalPrice: 280000,
-    rating: 4.9,
-    woodType: "Solid Rosewood & Italian Leather",
-    finish: "Deep Royal Mahogany & Satin Varnish",
-    dimensions: "King Size (80\" x 88\" x 90\" Column Height)",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
-    description: "Architectural 4-poster royal bed frame with turned columns, carved crown header, tufted leather headboard, and pair of matching nightstands.",
     isCustomizable: true,
     featured: true
   }
