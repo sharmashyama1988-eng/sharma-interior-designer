@@ -190,6 +190,14 @@ export default function RootLayout({
       '@type': 'Person',
       name: 'Satya Narayan Sharma',
     },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://sharma-interior-designer.vercel.app/?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
   };
 
   return (
