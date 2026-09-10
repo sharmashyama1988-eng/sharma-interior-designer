@@ -35,6 +35,7 @@ export interface ProjectItem {
   location: string;
   area: string;
   completionYear: string;
+  imageBefore?: string;
   imageAfter: string;
   description: string;
   highlights: string[];
