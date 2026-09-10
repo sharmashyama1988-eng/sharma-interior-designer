@@ -10,7 +10,7 @@ const COLLECTIONS_OVERVIEW = [
     title: 'Handcrafted Furniture Gallery',
     subtitle: 'Maharaja Sofas, Emperor Dining, 4-Poster Beds',
     count: '24+ Masterpieces',
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop',
+    image: '/maharaja_sofa.jpg',
     icon: Armchair,
     href: '/catloug#catalog',
     tag: 'Solid Burma Teak'
@@ -23,14 +23,14 @@ const COLLECTIONS_OVERVIEW = [
     image: '/kitchen1.jpg',
     icon: ChefHat,
     href: '/catloug#kitchen-almirah',
-    tag: '10-Yr Warranty'
+    tag: '15-Yr Warranty'
   },
   {
     id: 'mica',
     title: 'Mica Finishes & Door Patterns',
     subtitle: 'Statuario Marble, Smoked Teak, 3D Louvers',
     count: '50+ Swatches',
-    image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop',
+    image: '/door1.jpg',
     icon: Palette,
     href: '/catloug#mica-selector',
     tag: 'Live Swatches'
@@ -40,7 +40,7 @@ const COLLECTIONS_OVERVIEW = [
     title: 'Live 3D Design Configurator',
     subtitle: 'Select timber polish, velvet & brass studs in real time',
     count: 'Instant Estimate',
-    image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=800&auto=format&fit=crop',
+    image: '/dining_chairs_set.jpg',
     icon: Sliders,
     href: '/catloug#customizer',
     tag: 'Interactive Tool'

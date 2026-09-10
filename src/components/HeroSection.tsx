@@ -6,22 +6,22 @@ import { PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
 
 const HERO_SLIDES = [
   {
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1600&auto=format&fit=crop',
+    image: '/maharaja_sofa.jpg',
     subtitle: 'BESPOKE ROYAL LIVING',
     title: 'Handcrafted Teakwood Elegance & Classical Interiors',
     desc: 'Transforming luxury residences with 28+ years of artisan woodcraft, royal carved sofas, and bespoke architectural interior design.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1600&auto=format&fit=crop',
+    image: '/live_edge_dining.jpg',
     subtitle: 'THE EMPEROR DINING SUITE',
     title: 'Opulent Dining Halls Carved in Seasoned Timber',
-    desc: 'Custom 8-seater dining suites with gold gilt highlights, Italian marble table tops, and velvet upholstered high-back chairs.'
+    desc: 'Custom 8-seater dining suites with gold gilt highlights, solid live-edge table tops, and velvet upholstered high-back chairs.'
   },
   {
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop',
+    image: '/canopy_poster_bed.jpg',
     subtitle: 'HERITAGE BEDROOM SUITES',
     title: 'Four-Poster Master Beds & Palace Wardrobes',
-    desc: 'Sleep like royalty in solid Rosewood four-poster beds accompanied by hand-engraved nightstands and walk-in dressing suites.'
+    desc: 'Sleep like royalty in solid teak four-poster beds accompanied by hand-engraved nightstands and walk-in dressing suites.'
   }
 ];
 

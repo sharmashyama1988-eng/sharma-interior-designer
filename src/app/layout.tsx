@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   authors: [{ name: 'Satya Narayan Sharma', url: 'https://sharma-interior-designer.vercel.app' }],
   creator: 'Satya Narayan Sharma',
   publisher: 'Sharma Interior Designers',
-  applicationName: 'Sharma Interior Designers & Fine Furniture',
+  applicationName: 'Sharma Interior Designers',
   keywords: [
+    'Sharma Interior Designers',
+    'Sharma Interior Designer',
     'Satya Narayan Sharma',
     'Principal Architect Satya Narayan Sharma',
     'Lead Architect Satya Narayan Sharma',
-    'Sharma Interior Designers',
-    'Sharma Interior Designer & Fine Furniture',
     'Sharma Interior',
     'Sharma Furniture',
     'Custom Almirah',
@@ -81,6 +81,9 @@ export const metadata: Metadata = {
   },
   other: {
     'apple-mobile-web-app-title': 'Sharma Interior Designers',
+    'application-name': 'Sharma Interior Designers',
+    'og:site_name': 'Sharma Interior Designers',
+    'site_name': 'Sharma Interior Designers',
   },
   verification: {
     google: 'pE_h0mGnQTI35A2Z6drNRWA-dWCQQ6QhKz7be-Mq78g',
@@ -96,12 +99,12 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': ['HomeAndConstructionBusiness', 'ProfessionalService', 'HomeGoodsStore'],
     '@id': 'https://sharma-interior-designer.vercel.app/#business',
-    name: 'Sharma Interior Designers & Fine Furniture',
+    name: 'Sharma Interior Designers',
     alternateName: [
-      'Sharma Interior Designers',
+      'Sharma Interior Designer',
+      'Sharma Interior Designers & Fine Furniture',
       'Sharma Interior',
-      'Sharma Furniture Studio',
-      'Sharma Interior Designer & Fine Furniture'
+      'Sharma Furniture Studio'
     ],
     url: 'https://sharma-interior-designer.vercel.app/',
     logo: 'https://sharma-interior-designer.vercel.app/logo.jpg',
@@ -186,6 +189,15 @@ export default function RootLayout({
     name: 'Sharma Interior Designers',
     alternateName: ['Sharma Interior Designer', 'Sharma Interior', 'Sharma Furniture'],
     url: 'https://sharma-interior-designer.vercel.app/',
+    inLanguage: 'en-IN',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Sharma Interior Designers',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://sharma-interior-designer.vercel.app/logo.jpg'
+      }
+    },
     author: {
       '@type': 'Person',
       name: 'Satya Narayan Sharma',
@@ -203,6 +215,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="application-name" content="Sharma Interior Designers" />
+        <meta name="apple-mobile-web-app-title" content="Sharma Interior Designers" />
+        <meta property="og:site_name" content="Sharma Interior Designers" />
+        <meta name="site_name" content="Sharma Interior Designers" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBusinessData) }}

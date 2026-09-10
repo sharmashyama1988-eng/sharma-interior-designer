@@ -129,6 +129,20 @@ export default function FurnitureCatalog() {
                       {item.name}
                     </h3>
 
+                    {/* Dimensions & Config Badge */}
+                    <div className="bg-classical-bg/80 border border-classical-border/60 rounded px-2.5 py-1.5 text-[11px] text-classical-creamMuted flex flex-col gap-0.5">
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold text-classical-cream">Size:</span>
+                        <span className="text-classical-gold truncate max-w-[170px]">{item.dimensions}</span>
+                      </div>
+                      {item.configuration && (
+                        <div className="flex items-center justify-between text-[10px]">
+                          <span className="text-classical-creamMuted/80">Set:</span>
+                          <span className="truncate max-w-[170px] text-classical-creamMuted">{item.configuration}</span>
+                        </div>
+                      )}
+                    </div>
+
                     <p className="text-xs text-classical-creamMuted line-clamp-2 font-light">
                       {item.description}
                     </p>
@@ -139,27 +153,29 @@ export default function FurnitureCatalog() {
                 <div className="p-5 pt-0 space-y-3">
                   <div className="flex items-baseline justify-between pt-3 border-t border-classical-border/40">
                     <div>
-                      <span className="text-xs text-classical-creamMuted block text-[10px]">Estimated Price</span>
-                      <span className="font-serif text-lg font-bold text-classical-cream">
-                        ₹{item.price.toLocaleString('en-IN')}
-                      </span>
-                      {item.originalPrice && (
-                        <span className="text-xs text-classical-creamMuted/60 line-through ml-2">
-                          ₹{item.originalPrice.toLocaleString('en-IN')}
+                      <span className="text-xs text-classical-creamMuted block text-[10px]">Factory-Direct Price</span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-serif text-lg font-bold text-classical-cream">
+                          ₹{item.price.toLocaleString('en-IN')}
                         </span>
-                      )}
+                        {item.originalPrice && (
+                          <span className="text-xs text-classical-creamMuted/60 line-through">
+                            ₹{item.originalPrice.toLocaleString('en-IN')}
+                          </span>
+                        )}
+                      </div>
                     </div>
 
                     <button
                       onClick={() => setSelectedItem(item)}
                       className="text-xs text-classical-gold underline hover:text-white"
                     >
-                      Details
+                      Full Specs
                     </button>
                   </div>
 
                   <a
-                    href={getWhatsAppLink(`Hello Sharma Interior Designer, I want to inquire about '${item.name}' (Price: ₹${item.price.toLocaleString('en-IN')}). Please share customization details.`)}
+                    href={getWhatsAppLink(`Hello Sharma Interior Designer, I want to inquire about '${item.name}' (Size: ${item.dimensions}, Price: ₹${item.price.toLocaleString('en-IN')}). Please share customization details.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold uppercase tracking-wider text-black bg-gold-gradient rounded shadow-gold-sm hover:opacity-95 transition-all"
@@ -175,18 +191,19 @@ export default function FurnitureCatalog() {
 
         {/* Quick View Modal */}
         {selectedItem && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
-            <div className="relative w-full max-w-3xl bg-classical-card border border-classical-gold/60 rounded-xl overflow-hidden shadow-classical-deep">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fadeIn overflow-y-auto">
+            <div className="relative w-full max-w-3xl bg-classical-card border border-classical-gold/60 rounded-xl overflow-hidden shadow-classical-deep my-8">
               {/* Close Button */}
               <button
                 onClick={() => setSelectedItem(null)}
-                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 text-classical-gold hover:text-white border border-classical-gold/40"
+                className="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/70 text-classical-gold hover:text-white border border-classical-gold/40 transition-colors"
+                aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="h-64 md:h-auto min-h-[300px] relative bg-black">
+                <div className="h-72 md:h-auto min-h-[360px] relative bg-black">
                   <Image
                     src={selectedItem.image}
                     alt={`${selectedItem.name} - Detailed architectural furniture view by Satya Narayan Sharma`}
@@ -197,13 +214,15 @@ export default function FurnitureCatalog() {
                   <div className="absolute inset-0 bg-gradient-to-t from-classical-card via-transparent to-transparent md:hidden pointer-events-none" />
                 </div>
 
-                <div className="p-6 md:p-8 space-y-5 flex flex-col justify-between">
+                <div className="p-6 md:p-8 space-y-4 flex flex-col justify-between">
                   <div className="space-y-3">
-                    <span className="text-xs uppercase tracking-widest text-classical-gold font-bold">
-                      {selectedItem.woodType}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-[11px] uppercase tracking-widest text-classical-gold font-bold bg-classical-bg/80 px-2.5 py-1 rounded border border-classical-gold/30">
+                        {selectedItem.woodType}
+                      </span>
+                    </div>
 
-                    <h3 className="font-serif text-2xl font-bold text-classical-cream">
+                    <h3 className="font-serif text-2xl font-bold text-classical-cream leading-snug">
                       {selectedItem.name}
                     </h3>
 
@@ -211,39 +230,65 @@ export default function FurnitureCatalog() {
                       {selectedItem.description}
                     </p>
 
-                    {/* Detailed Specifications */}
-                    <div className="space-y-2 pt-2 border-t border-classical-border/60 text-xs">
-                      <div className="flex justify-between">
-                        <span className="text-classical-creamMuted">Dimensions:</span>
-                        <span className="text-classical-cream font-medium">{selectedItem.dimensions}</span>
+                    {/* Detailed Specifications Box */}
+                    <div className="space-y-2 pt-3 border-t border-classical-border/60 text-xs bg-classical-bg/50 p-3 rounded-lg border border-classical-border/40">
+                      <div className="flex justify-between gap-2">
+                        <span className="text-classical-creamMuted font-medium">Exact Dimensions:</span>
+                        <span className="text-classical-gold font-bold text-right">{selectedItem.dimensions}</span>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-classical-creamMuted">Finish & Polish:</span>
-                        <span className="text-classical-gold font-medium">{selectedItem.finish}</span>
+                      {selectedItem.configuration && (
+                        <div className="flex justify-between gap-2">
+                          <span className="text-classical-creamMuted font-medium">Configuration:</span>
+                          <span className="text-classical-cream font-medium text-right">{selectedItem.configuration}</span>
+                        </div>
+                      )}
+                      {selectedItem.seatingCapacity && (
+                        <div className="flex justify-between gap-2">
+                          <span className="text-classical-creamMuted font-medium">Capacity:</span>
+                          <span className="text-classical-cream font-medium text-right">{selectedItem.seatingCapacity}</span>
+                        </div>
+                      )}
+                      <div className="flex justify-between gap-2">
+                        <span className="text-classical-creamMuted font-medium">Finish &amp; Polish:</span>
+                        <span className="text-classical-gold font-medium text-right">{selectedItem.finish}</span>
                       </div>
-                      <div className="flex justify-between">
-                        <span className="text-classical-creamMuted">Customization:</span>
-                        <span className="text-emerald-400 font-medium flex items-center gap-1">
-                          <CheckCircle className="w-3 h-3" /> Available
-                        </span>
+                      <div className="flex justify-between gap-2">
+                        <span className="text-classical-creamMuted font-medium">Warranty:</span>
+                        <span className="text-emerald-400 font-medium text-right">{selectedItem.warranty}</span>
+                      </div>
+                      <div className="flex justify-between gap-2">
+                        <span className="text-classical-creamMuted font-medium">Delivery Timeline:</span>
+                        <span className="text-classical-cream font-medium text-right">{selectedItem.leadTime}</span>
                       </div>
                     </div>
 
-                    <div className="pt-2">
-                      <span className="text-xs text-classical-creamMuted block">Indicative Price</span>
-                      <span className="font-serif text-2xl font-bold text-classical-gold">
-                        ₹{selectedItem.price.toLocaleString('en-IN')}
+                    <div className="pt-2 flex items-baseline justify-between">
+                      <div>
+                        <span className="text-[10px] uppercase tracking-wider text-classical-creamMuted block">Indicative Factory Price</span>
+                        <div className="flex items-center gap-2">
+                          <span className="font-serif text-2xl font-bold text-classical-gold">
+                            ₹{selectedItem.price.toLocaleString('en-IN')}
+                          </span>
+                          {selectedItem.originalPrice && (
+                            <span className="text-xs text-classical-creamMuted/60 line-through">
+                              ₹{selectedItem.originalPrice.toLocaleString('en-IN')}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <span className="text-[10px] text-emerald-400 font-semibold bg-emerald-950/60 border border-emerald-500/40 px-2 py-1 rounded">
+                        Factory-Direct Pricing
                       </span>
                     </div>
                   </div>
 
                   {/* Actions */}
-                  <div className="space-y-3 pt-4 border-t border-classical-border/60">
+                  <div className="space-y-2 pt-3 border-t border-classical-border/60">
                     <a
-                      href={getWhatsAppLink(`Hello Sharma Interior Designer, I am interested in customizing '${selectedItem.name}' (Dimensions: ${selectedItem.dimensions}, Wood: ${selectedItem.woodType}). Please send me the complete catalog.`)}
+                      href={getWhatsAppLink(`Hello Sharma Interior Designer, I am interested in customizing '${selectedItem.name}' (Dimensions: ${selectedItem.dimensions}, Configuration: ${selectedItem.configuration}, Wood: ${selectedItem.woodType}, Price: ₹${selectedItem.price.toLocaleString('en-IN')}). Please share the catalog and quote.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center gap-2 py-3 text-xs font-bold uppercase tracking-wider text-black bg-gold-gradient rounded shadow-gold-glow"
+                      className="w-full flex items-center justify-center gap-2 py-3 text-xs font-bold uppercase tracking-wider text-black bg-gold-gradient rounded shadow-gold-glow hover:opacity-95 transition-all"
                     >
                       <MessageSquare className="w-4 h-4 fill-black" />
                       <span>Inquire Now on WhatsApp</span>
@@ -251,7 +296,7 @@ export default function FurnitureCatalog() {
 
                     <a
                       href={`tel:${PHONE_NUMBER}`}
-                      className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-cream bg-classical-bg border border-classical-border hover:border-classical-gold rounded"
+                      className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-cream bg-classical-bg border border-classical-border hover:border-classical-gold rounded transition-colors"
                     >
                       <Phone className="w-3.5 h-3.5 text-classical-gold" />
                       <span>Call {PHONE_NUMBER}</span>

@@ -9,30 +9,29 @@ const ROOM_PRESETS = [
   {
     id: 'royal_living',
     name: 'Royal Heritage Living Room',
-    image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1200&auto=format&fit=crop',
+    image: '/maharaja_sofa.jpg',
     hotspots: [
-      { id: 'h1', title: 'Teak Maharaja Sofa (3+2+1)', price: '₹2,65,000', x: '40%', y: '65%' },
-      { id: 'h2', title: 'Carved Teak Ceiling Medallion', price: 'Included in Villa Pkg', x: '50%', y: '20%' },
-      { id: 'h3', title: 'Italian Marble Coffee Table', price: '₹78,000', x: '55%', y: '75%' },
+      { id: 'h1', title: 'Teak Maharaja Sofa (3+2+1)', price: '₹1,45,000', x: '40%', y: '65%' },
+      { id: 'h2', title: 'Solid Teak Live-Edge Center Table', price: '₹24,000', x: '55%', y: '75%' },
+      { id: 'h3', title: 'Architectural Teak Wainscoting', price: '₹650 / sq. ft.', x: '25%', y: '35%' },
     ]
   },
   {
     id: 'emperor_dining',
-    name: 'Emperor Grand Dining Hall',
-    image: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?q=80&w=1200&auto=format&fit=crop',
+    name: 'Luxury Live-Edge Dining Hall',
+    image: '/live_edge_dining.jpg',
     hotspots: [
-      { id: 'h4', title: '8-Seater Carved Burma Teak Table', price: '₹3,25,000', x: '45%', y: '60%' },
-      { id: 'h5', title: 'Gold Leaf Chandelier Ring', price: 'Custom Order', x: '50%', y: '25%' },
-      { id: 'h6', title: 'Renaissance Crockery Cabinet', price: '₹2,15,000', x: '80%', y: '50%' },
+      { id: 'h4', title: '8-Seater Solid Burma Teak Dining Table', price: '₹88,000', x: '45%', y: '60%' },
+      { id: 'h5', title: 'Curved Teak & Velvet Dining Chairs (Set of 6)', price: '₹32,000', x: '65%', y: '68%' },
     ]
   },
   {
     id: 'palace_bedroom',
     name: 'Palace Master Bedroom Suite',
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop',
+    image: '/canopy_poster_bed.jpg',
     hotspots: [
-      { id: 'h7', title: 'Victoria 4-Poster Rosewood Bed', price: '₹2,45,000', x: '48%', y: '55%' },
-      { id: 'h8', title: 'Hand-Carved Wall Panelling', price: '₹1,350 / sq. ft.', x: '25%', y: '40%' },
+      { id: 'h7', title: 'Royal Heritage 4-Poster Teak Bed', price: '₹85,000', x: '48%', y: '55%' },
+      { id: 'h8', title: 'Floating Japandi Platform King Bed', price: '₹58,000', x: '25%', y: '40%' },
     ]
   }
 ];
