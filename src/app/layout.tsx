@@ -99,6 +99,10 @@ export const metadata: Metadata = {
     'application-name': 'Sharma Interior Designers',
     'og:site_name': 'Sharma Interior Designers',
     'site_name': 'Sharma Interior Designers',
+    'geo.region': 'IN-BR',
+    'geo.placename': 'Patna, Bihar',
+    'geo.position': '25.5941;85.1376',
+    'ICBM': '25.5941, 85.1376',
   },
   verification: {
     google: 'pE_h0mGnQTI35A2Z6drNRWA-dWCQQ6QhKz7be-Mq78g',
@@ -169,6 +173,29 @@ export default function RootLayout({
       opens: '09:00',
       closes: '21:00',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.95',
+      reviewCount: '138',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Patna' },
+      { '@type': 'State', name: 'Bihar' },
+      { '@type': 'Country', name: 'India' },
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Luxury Furniture & Turnkey Interior Architecture Collections',
+      itemListElement: [
+        { '@type': 'OfferCatalog', name: 'Burma Teakwood Living Room Furniture' },
+        { '@type': 'OfferCatalog', name: 'Royal Dining Suites' },
+        { '@type': 'OfferCatalog', name: 'Four-Poster Master Beds' },
+        { '@type': 'OfferCatalog', name: 'Modular Kitchen Architecture' },
+        { '@type': 'OfferCatalog', name: 'Custom Wardrobes & Palace Almirahs' },
+      ],
+    },
     sameAs: [
       'https://sharma-interior-designer.vercel.app'
     ],
@@ -227,6 +254,79 @@ export default function RootLayout({
     },
   };
 
+  const schemaFAQPage = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://sharma-interior-designer.vercel.app/#faq',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How can I inquire or place a custom furniture order?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'You can click any Inquire on WhatsApp button across the website or call us directly at 9801197102. Our interior design consultants will immediately connect with you, share 3D catalogs, and provide personalized quotes.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you offer complete home interior design packages?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes! With 28+ years of excellence, we specialize in turnkey interior solutions — including space planning, 3D architectural renders, custom teakwood furniture manufacturing, false ceiling, lighting, wall panelling, and white-glove installation.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I customize the dimensions and finish of any catalog item?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Absolutely! Every item is manufactured at our own woodworking facility. You can customize dimensions (inches/cm), wood grade (Burma Teak, Sheesham, Walnut), polish finish (Matt, High-Gloss PU, Natural Oil), and fabric colors.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What wood grade is used for classical furniture?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We exclusively use Grade-A seasoned Burma Teakwood, Indian Rosewood (Sheesham), and high-grade HDHMR marine ply for modular kitchens with anti-termite and moisture-shield treatment.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the warranty on Sharma Interior furniture and modular kitchens?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'We provide up to a 20-Year Hand-Carved Teakwood Guarantee and Lifetime anti-termite borer warranty on all solid seasoned teak structures.',
+        },
+      },
+    ],
+  };
+
+  const schemaBreadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://sharma-interior-designer.vercel.app/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Digital Furniture & Interior Catalog',
+        item: 'https://sharma-interior-designer.vercel.app/catloug/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Consultation Booking',
+        item: 'https://sharma-interior-designer.vercel.app/booking/',
+      },
+    ],
+  };
+
   return (
     <html lang="en" className={`scroll-smooth ${playfair.variable} ${plusJakarta.variable}`}>
       <head>
@@ -245,6 +345,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebSite) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFAQPage) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumbs) }}
         />
       </head>
       <body className="bg-classical-bg text-classical-cream min-h-screen flex flex-col selection:bg-classical-gold selection:text-black font-sans antialiased">

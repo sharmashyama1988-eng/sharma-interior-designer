@@ -5,24 +5,103 @@ import FurnitureCatalog from '@/components/FurnitureCatalog';
 import ModularKitchenAlmirah from '@/components/ModularKitchenAlmirah';
 import MicaDesignSelector from '@/components/MicaDesignSelector';
 import InteractiveCustomizer from '@/components/InteractiveCustomizer';
-import { PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
+import { FURNITURE_CATALOG, PHONE_NUMBER, getWhatsAppLink } from '@/data/furnitureData';
 
 export const metadata: Metadata = {
   title: 'Complete Furniture & Interior Catalog | Sharma Interior Designers',
   description: 'Explore the full digital catalog of handcrafted Burma teakwood furniture, modular kitchens, custom almirahs, designer mica swatches, and 3D customizer by Principal Architect Satya Narayan Sharma.',
   alternates: {
-    canonical: 'https://sharma-interior-designer.vercel.app/catloug',
+    canonical: 'https://sharma-interior-designer.vercel.app/catloug/',
   },
   openGraph: {
     title: 'Sharma Interior Designers - Complete Furniture & Architectural Catalog',
     description: 'Bespoke Burma teakwood furniture, palace almirahs, and modern modular kitchens by Satya Narayan Sharma.',
-    url: 'https://sharma-interior-designer.vercel.app/catloug',
+    url: 'https://sharma-interior-designer.vercel.app/catloug/',
+    images: [
+      {
+        url: '/logo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Sharma Interior Designers Catalog',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Complete Furniture Catalog | Sharma Interior Designers',
+    description: 'Handcrafted teakwood furniture, luxury kitchens & custom almirahs.',
+    images: ['/logo.jpg'],
   },
 };
 
 export default function CatlougPage() {
+  const schemaCatalogItemList = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    '@id': 'https://sharma-interior-designer.vercel.app/catloug/#items',
+    name: 'Sharma Interior Designers Fine Furniture Collection',
+    description: 'Handcrafted solid Burma teakwood sofas, emperor dining tables, 4-poster beds, and custom almirahs.',
+    numberOfItems: FURNITURE_CATALOG.length,
+    itemListElement: FURNITURE_CATALOG.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Product',
+        name: item.name,
+        description: item.description,
+        image: `https://sharma-interior-designer.vercel.app${item.image}`,
+        sku: item.id,
+        brand: {
+          '@type': 'Brand',
+          name: 'Sharma Interior Designers',
+        },
+        offers: {
+          '@type': 'Offer',
+          priceCurrency: 'INR',
+          price: item.price,
+          itemCondition: 'https://schema.org/NewCondition',
+          availability: 'https://schema.org/InStock',
+          url: 'https://sharma-interior-designer.vercel.app/catloug/#catalog',
+          seller: {
+            '@type': 'Organization',
+            name: 'Sharma Interior Designers',
+          },
+        },
+      },
+    })),
+  };
+
+  const schemaBreadcrumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://sharma-interior-designer.vercel.app/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Furniture & Interior Catalog',
+        item: 'https://sharma-interior-designer.vercel.app/catloug/',
+      },
+    ],
+  };
+
   return (
     <div className="bg-classical-bg min-h-screen pt-24 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaCatalogItemList) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumbs) }}
+      />
       {/* Top Breadcrumb & Return Bar */}
       <div className="bg-classical-card/90 border-b border-classical-gold/30 sticky top-[68px] sm:top-[72px] z-40 backdrop-blur-xl shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-4">

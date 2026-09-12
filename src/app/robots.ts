@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/api/'],
       },
       {
         userAgent: [
@@ -22,6 +23,7 @@ export default function robots(): MetadataRoute.Robots {
           'facebookexternalhit',
         ],
         allow: '/',
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://sharma-interior-designer.vercel.app/sitemap.xml',
