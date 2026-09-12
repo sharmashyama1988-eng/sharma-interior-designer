@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Sliders, Sparkles, MessageSquare, Phone, Check, RefreshCw } from 'lucide-react';
+import { Sliders, Sparkles, MessageSquare, Phone, Check, RefreshCw, Copy, CheckCheck } from 'lucide-react';
 import { getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
 const FURNITURE_TYPES = [
@@ -37,6 +37,7 @@ export default function InteractiveCustomizer() {
   const [selectedWood, setSelectedWood] = useState(WOOD_FINISHES[0]);
   const [selectedFabric, setSelectedFabric] = useState(FABRICS[0]);
   const [selectedTrim, setSelectedTrim] = useState(BRASS_TRIMS[0]);
+  const [copied, setCopied] = useState(false);
 
   const calculateTotalPrice = () => {
     return selectedFurniture.basePrice + selectedWood.priceMod + selectedTrim.mod;
@@ -44,6 +45,18 @@ export default function InteractiveCustomizer() {
 
   const getCustomizedWhatsAppMessage = () => {
     return `Hello Sharma Interior Designer,\n\nI configured a custom design on your website:\n- Item: ${selectedFurniture.name}\n- Wood Finish: ${selectedWood.name}\n- Upholstery/Fabric: ${selectedFabric.name} (${selectedFabric.type})\n- Brass Detailing: ${selectedTrim.name}\n- Estimated Price: ₹${calculateTotalPrice().toLocaleString('en-IN')}\n\nPlease share wood samples and delivery timeline.`;
+  };
+
+  const handleCopySpecs = () => {
+    navigator.clipboard.writeText(getCustomizedWhatsAppMessage());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleReset = () => {
+    setSelectedWood(WOOD_FINISHES[0]);
+    setSelectedFabric(FABRICS[0]);
+    setSelectedTrim(BRASS_TRIMS[0]);
   };
 
   return (
@@ -64,9 +77,9 @@ export default function InteractiveCustomizer() {
         </div>
 
         {/* Configurator Box */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-classical-card rounded-xl border border-classical-gold/40 overflow-hidden shadow-classical-deep">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 bg-classical-card rounded-2xl border border-classical-gold/40 overflow-hidden shadow-classical-deep">
           {/* Left Preview Box */}
-          <div className="lg:col-span-7 relative bg-black/60 min-h-[400px] lg:min-h-[550px] flex items-center justify-center p-8 overflow-hidden group">
+          <div className="lg:col-span-7 relative bg-[#0c0b0a]/90 min-h-[400px] lg:min-h-[550px] flex items-center justify-center p-8 overflow-hidden group">
             {/* Live Visualizer Render Image */}
             <div className="relative w-full h-full min-h-[350px] flex items-center justify-center">
               <Image
@@ -74,24 +87,24 @@ export default function InteractiveCustomizer() {
                 alt={`${selectedFurniture.name} - Custom configured architectural design by Satya Narayan Sharma`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover rounded-lg shadow-2xl transition-all duration-700 filter group-hover:brightness-105"
+                className="object-cover rounded-xl shadow-2xl transition-all duration-700 filter group-hover:brightness-105"
               />
 
               {/* Tint overlay representing chosen wood finish */}
               <div
-                className="absolute inset-0 rounded-lg opacity-30 mix-blend-overlay pointer-events-none transition-colors duration-500"
+                className="absolute inset-0 rounded-xl opacity-30 mix-blend-overlay pointer-events-none transition-colors duration-500"
                 style={{ backgroundColor: selectedWood.hex }}
               />
 
               {/* Fabric color accent badge indicator */}
-              <div className="absolute top-4 left-4 backdrop-blur-md bg-black/70 border border-classical-gold/40 p-3 rounded-lg flex items-center gap-3 text-xs">
+              <div className="absolute top-4 left-4 backdrop-blur-md bg-[#121110]/85 border border-classical-gold/40 p-3 rounded-lg flex items-center gap-3 text-xs shadow-lg">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-4 h-4 rounded-full border border-white" style={{ backgroundColor: selectedWood.hex }} />
+                  <span className="w-4 h-4 rounded-full border border-white/60 shadow-sm" style={{ backgroundColor: selectedWood.hex }} />
                   <span className="text-classical-cream font-medium">{selectedWood.name}</span>
                 </div>
                 <div className="w-[1px] h-4 bg-classical-border" />
                 <div className="flex items-center gap-1.5">
-                  <span className="w-4 h-4 rounded-full border border-white" style={{ backgroundColor: selectedFabric.hex }} />
+                  <span className="w-4 h-4 rounded-full border border-white/60 shadow-sm" style={{ backgroundColor: selectedFabric.hex }} />
                   <span className="text-classical-gold font-medium">{selectedFabric.name}</span>
                 </div>
               </div>
@@ -109,6 +122,21 @@ export default function InteractiveCustomizer() {
           {/* Right Configuration Controls */}
           <div className="lg:col-span-5 p-6 lg:p-8 space-y-6 flex flex-col justify-between">
             <div className="space-y-6">
+              {/* Header with Reset */}
+              <div className="flex items-center justify-between pb-2 border-b border-classical-border/50">
+                <span className="text-[11px] uppercase tracking-wider font-extrabold text-classical-gold">
+                  Bespoke Specs Configurator
+                </span>
+                <button
+                  type="button"
+                  onClick={handleReset}
+                  className="flex items-center gap-1.5 text-[11px] text-classical-creamMuted hover:text-classical-gold transition-colors"
+                >
+                  <RefreshCw className="w-3 h-3" />
+                  <span>Reset Options</span>
+                </button>
+              </div>
+
               {/* Step 1: Select Item */}
               <div>
                 <label className="text-xs uppercase tracking-wider font-bold text-classical-gold block mb-3">
@@ -208,7 +236,7 @@ export default function InteractiveCustomizer() {
             </div>
 
             {/* Direct WhatsApp Action */}
-            <div className="pt-4 border-t border-classical-border space-y-3">
+            <div className="pt-4 border-t border-classical-border space-y-2.5">
               <a
                 href={getWhatsAppLink(getCustomizedWhatsAppMessage())}
                 target="_blank"
@@ -219,9 +247,27 @@ export default function InteractiveCustomizer() {
                 <span>Inquire Custom Design on WhatsApp</span>
               </a>
 
+              <button
+                type="button"
+                onClick={handleCopySpecs}
+                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-gold bg-classical-bg border border-classical-gold/50 hover:bg-classical-mahogany rounded transition-all"
+              >
+                {copied ? (
+                  <>
+                    <CheckCheck className="w-4 h-4 text-emerald-400" />
+                    <span className="text-emerald-400 font-bold">Specs Copied to Clipboard!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 text-classical-gold" />
+                    <span>Copy Custom Specs</span>
+                  </>
+                )}
+              </button>
+
               <a
                 href={`tel:${PHONE_NUMBER}`}
-                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-cream bg-classical-bg border border-classical-border hover:border-classical-gold rounded"
+                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-cream bg-classical-bg border border-classical-border hover:border-classical-gold rounded transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-classical-gold" />
                 <span>Call Woodsmith: {PHONE_NUMBER}</span>

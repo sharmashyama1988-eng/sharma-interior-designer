@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Calculator, MessageSquare, Phone, Sparkles, Check, Layers, Sliders, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Calculator, MessageSquare, Phone, Sparkles, Check, Layers, Sliders, ShieldCheck, ChevronRight, Copy, CheckCheck } from 'lucide-react';
 import { getWhatsAppLink, PHONE_NUMBER } from '@/data/furnitureData';
 
 const SPACE_TYPES = [
@@ -33,6 +33,9 @@ export default function CostEstimator() {
   const [sqFt, setSqFt] = useState(1500);
   const [selectedGrade, setSelectedGrade] = useState(TIMBER_GRADES[1]);
   const [selectedAddons, setSelectedAddons] = useState<string[]>(['coffered_ceiling', 'gold_leafing']);
+  const [copied, setCopied] = useState(false);
+
+  const AREA_PRESETS = [500, 1000, 1500, 2500, 5000, 8000];
 
   const toggleAddon = (id: string) => {
     setSelectedAddons((prev) =>
@@ -63,6 +66,12 @@ export default function CostEstimator() {
       .join(', ');
 
     return `Hello Sharma Interior Designer,\n\nI calculated a detailed custom estimate on your website:\n- Space Type: ${selectedSpace.name}\n- Carpet Area: ${sqFt.toLocaleString()} sq. ft.\n- Timber/Material Grade: ${selectedGrade.name}\n- Add-on Upgrades: ${addonsListStr || 'None'}\n- Calculated Investment: ₹${grandTotalEstimate.toLocaleString('en-IN')}\n\nPlease provide an itemized formal quote and schedule a site inspection.`;
+  };
+
+  const handleCopyQuote = () => {
+    navigator.clipboard.writeText(getWhatsAppQuotationMessage());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
   };
 
   return (
@@ -154,6 +163,25 @@ export default function CostEstimator() {
                 <span>300 sq. ft. (Compact Room)</span>
                 <span>2,500 sq. ft. (Penthouse)</span>
                 <span>10,000+ sq. ft. (Palace Villa)</span>
+              </div>
+
+              {/* Quick Area Presets */}
+              <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-classical-border/40">
+                <span className="text-[10px] uppercase font-bold text-classical-gold/70">Presets:</span>
+                {AREA_PRESETS.map((preset) => (
+                  <button
+                    key={preset}
+                    type="button"
+                    onClick={() => setSqFt(preset)}
+                    className={`px-2.5 py-1 rounded text-[11px] font-semibold transition-all ${
+                      sqFt === preset
+                        ? 'bg-classical-gold text-black font-bold shadow-gold-sm'
+                        : 'bg-classical-card border border-classical-border text-classical-creamMuted hover:border-classical-gold/60'
+                    }`}
+                  >
+                    {preset.toLocaleString()} sq ft
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -274,6 +302,24 @@ export default function CostEstimator() {
               )}
             </div>
 
+            {/* Visual Cost Allocation Bar */}
+            <div className="space-y-1.5 pt-2 border-t border-classical-border/40">
+              <div className="flex justify-between text-[10px] uppercase font-bold text-classical-creamMuted">
+                <span>Timber: {Math.round((gradeAdjustedCost / grandTotalEstimate) * 100)}%</span>
+                <span>Add-ons: {Math.round((addonsTotal / grandTotalEstimate) * 100)}%</span>
+              </div>
+              <div className="w-full h-2 rounded-full bg-classical-bg overflow-hidden flex border border-classical-border/50">
+                <div 
+                  className="bg-gold-gradient h-full transition-all duration-500" 
+                  style={{ width: `${Math.max(5, Math.round((gradeAdjustedCost / grandTotalEstimate) * 100))}%` }} 
+                />
+                <div 
+                  className="bg-amber-600 h-full transition-all duration-500" 
+                  style={{ width: `${Math.max(0, Math.round((addonsTotal / grandTotalEstimate) * 100))}%` }} 
+                />
+              </div>
+            </div>
+
             {/* Grand Total */}
             <div className="p-4 rounded-lg bg-classical-bg border border-classical-gold/40 text-center shadow-gold-sm">
               <span className="text-[10px] uppercase tracking-widest text-classical-creamMuted block font-semibold mb-1">
@@ -288,7 +334,7 @@ export default function CostEstimator() {
             </div>
 
             {/* Actions */}
-            <div className="space-y-3 pt-2">
+            <div className="space-y-2.5 pt-2">
               <a
                 href={getWhatsAppLink(getWhatsAppQuotationMessage())}
                 target="_blank"
@@ -299,9 +345,27 @@ export default function CostEstimator() {
                 <span>Send Estimate to WhatsApp</span>
               </a>
 
+              <button
+                type="button"
+                onClick={handleCopyQuote}
+                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-gold bg-classical-bg border border-classical-gold/50 hover:bg-classical-mahogany rounded transition-all"
+              >
+                {copied ? (
+                  <>
+                    <CheckCheck className="w-4 h-4 text-emerald-400" />
+                    <span className="text-emerald-400 font-bold">Itemized Quote Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4 text-classical-gold" />
+                    <span>Copy Itemized Quote</span>
+                  </>
+                )}
+              </button>
+
               <a
                 href={`tel:${PHONE_NUMBER}`}
-                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-cream bg-classical-bg border border-classical-border hover:border-classical-gold rounded"
+                className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-classical-cream bg-classical-bg border border-classical-border hover:border-classical-gold rounded transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-classical-gold" />
                 <span>Call Chief Architect: {PHONE_NUMBER}</span>

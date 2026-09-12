@@ -31,8 +31,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        serif: ['Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
-        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        serif: ['var(--font-playfair)', 'Playfair Display', 'Cormorant Garamond', 'Georgia', 'serif'],
+        sans: ['var(--font-plus-jakarta)', 'Plus Jakarta Sans', 'Inter', 'sans-serif'],
       },
       backgroundImage: {
         'gold-gradient': 'linear-gradient(135deg, #ebd278 0%, #d4af37 50%, #997a20 100%)',

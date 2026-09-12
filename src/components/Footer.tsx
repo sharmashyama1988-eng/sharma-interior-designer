@@ -10,7 +10,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-classical-cream border-t border-classical-gold/30 relative">
+    <footer className="bg-[#0c0b0a] text-classical-cream border-t border-classical-gold/30 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand Col */}

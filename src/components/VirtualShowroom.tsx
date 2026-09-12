@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Eye, Sparkles, MessageSquare, Plus, Info } from 'lucide-react';
+import { Eye, Sparkles, MessageSquare, Plus, Info, X } from 'lucide-react';
 import { getWhatsAppLink } from '@/data/furnitureData';
 
 const ROOM_PRESETS = [
@@ -75,15 +75,15 @@ export default function VirtualShowroom() {
         </div>
 
         {/* Interactive Canvas Container */}
-        <div className="relative h-[450px] sm:h-[550px] rounded-xl overflow-hidden border border-classical-gold/40 shadow-classical-deep group">
+        <div className="relative h-[450px] sm:h-[550px] rounded-2xl overflow-hidden border border-classical-gold/40 shadow-classical-deep group">
           <Image
             src={activeRoom.image}
             alt={`${activeRoom.name} - 3D Virtual Showroom Designed by Architect Satya Narayan Sharma`}
             fill
             sizes="(max-width: 1200px) 100vw, 1200px"
-            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+            className="object-cover transition-transform duration-1000 group-hover:scale-105 transform-gpu"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0c0b0a]/80 via-transparent to-[#0c0b0a]/40 pointer-events-none" />
 
           {/* Interactive Hotspots */}
           {activeRoom.hotspots.map((spot) => (
@@ -92,20 +92,34 @@ export default function VirtualShowroom() {
               className="absolute z-20 transform -translate-x-1/2 -translate-y-1/2"
               style={{ left: spot.x, top: spot.y }}
             >
-              <button
-                onClick={() => setSelectedHotspot(selectedHotspot?.id === spot.id ? null : spot)}
-                className="w-8 h-8 rounded-full bg-gold-gradient border-2 border-white text-black flex items-center justify-center shadow-gold-glow animate-pulse hover:scale-125 transition-transform"
-                aria-label={`Hotspot for ${spot.title}`}
-              >
-                <Plus className="w-4 h-4 text-black font-bold" />
-              </button>
+              <div className="relative">
+                {/* Radar Ripple */}
+                <span className="absolute -inset-2 rounded-full bg-classical-gold/40 animate-ping pointer-events-none" />
+
+                <button
+                  onClick={() => setSelectedHotspot(selectedHotspot?.id === spot.id ? null : spot)}
+                  className="relative w-8 h-8 rounded-full bg-gold-gradient border-2 border-white text-black flex items-center justify-center shadow-gold-glow hover:scale-125 transition-transform"
+                  aria-label={`Hotspot for ${spot.title}`}
+                >
+                  <Plus className="w-4 h-4 text-black font-extrabold" />
+                </button>
+              </div>
 
               {/* Hotspot Info Popup Card */}
               {selectedHotspot?.id === spot.id && (
-                <div className="absolute left-10 top-0 z-30 w-56 p-4 rounded-lg bg-classical-card/95 backdrop-blur-md border border-classical-gold text-left shadow-gold-glow animate-fadeIn">
-                  <div className="flex items-center gap-1 text-[10px] uppercase text-classical-gold font-bold mb-1">
-                    <Info className="w-3 h-3" />
-                    <span>Featured Furniture</span>
+                <div className="absolute left-10 top-0 z-30 w-60 p-4 rounded-xl bg-classical-card/95 backdrop-blur-xl border border-classical-gold text-left shadow-classical-deep animate-fadeIn">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div className="flex items-center gap-1 text-[10px] uppercase text-classical-gold font-bold">
+                      <Info className="w-3 h-3" />
+                      <span>Featured Piece</span>
+                    </div>
+                    <button
+                      onClick={() => setSelectedHotspot(null)}
+                      className="text-classical-creamMuted hover:text-white"
+                      aria-label="Close"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                   <h4 className="font-serif text-sm font-bold text-classical-cream">
                     {spot.title}
@@ -117,7 +131,7 @@ export default function VirtualShowroom() {
                     href={getWhatsAppLink(`Hello Sharma Interior Designer, I found '${spot.title}' (${spot.price}) on your Virtual Showroom. Please share catalog details.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full mt-2 flex items-center justify-center gap-1.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-black bg-gold-gradient rounded"
+                    className="w-full mt-2.5 flex items-center justify-center gap-1.5 py-2 text-[10px] font-bold uppercase tracking-wider text-black bg-gold-gradient rounded shadow-gold-sm hover:opacity-95 transition-all"
                   >
                     <MessageSquare className="w-3 h-3 fill-black" />
                     <span>Inquire Item</span>
@@ -128,7 +142,7 @@ export default function VirtualShowroom() {
           ))}
 
           {/* Room Label Overlay */}
-          <div className="absolute bottom-6 left-6 z-10 bg-classical-card/90 backdrop-blur-md p-4 rounded-lg border border-classical-gold/30">
+          <div className="absolute bottom-6 left-6 z-10 bg-classical-card/90 backdrop-blur-md p-4 rounded-xl border border-classical-gold/30 shadow-lg">
             <span className="text-[10px] uppercase tracking-widest text-classical-gold font-bold block">
               Virtual Room View
             </span>

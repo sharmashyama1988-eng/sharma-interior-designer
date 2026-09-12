@@ -1,8 +1,23 @@
 import type { Metadata } from 'next';
+import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '600', '700', '900'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sharma-interior-designer.vercel.app/'),
@@ -213,7 +228,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${playfair.variable} ${plusJakarta.variable}`}>
       <head>
         <meta name="application-name" content="Sharma Interior Designers" />
         <meta name="apple-mobile-web-app-title" content="Sharma Interior Designers" />
@@ -232,7 +247,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebSite) }}
         />
       </head>
-      <body className="bg-classical-bg text-classical-cream min-h-screen flex flex-col selection:bg-classical-gold selection:text-black">
+      <body className="bg-classical-bg text-classical-cream min-h-screen flex flex-col selection:bg-classical-gold selection:text-black font-sans antialiased">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
