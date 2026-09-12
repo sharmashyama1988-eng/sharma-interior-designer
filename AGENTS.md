@@ -12,4 +12,4 @@
 - Root Layout maintains `HomeAndConstructionBusiness`, `AggregateRating`, `FAQPage`, and `BreadcrumbList`.
 - Catalog (`/catloug/`) maintains `ItemList` of `Product` schemas with INR pricing and availability.
 - Booking (`/booking/`) maintains booking breadcrumbs and action schemas.
-- `sitemap.ts` includes image arrays for luxury portfolio discovery.
+- `sitemap.ts` strictly conforms to Next.js `MetadataRoute.Sitemap` (URL, lastModified, changeFrequency, priority).
